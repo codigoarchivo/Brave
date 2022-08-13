@@ -1,14 +1,15 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import Head from 'next/head'
 
 import { Box } from '@mui/material'
 
-import { Nabvar } from '../ui';
+import { Nabvar, Sidebar } from '../ui';
+
 
 interface Props {
     title?: string,
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 export const Layout: FC<Props> = ({ title = 'name', children }) => {
@@ -18,6 +19,7 @@ export const Layout: FC<Props> = ({ title = 'name', children }) => {
                 <title>{title}</title>
             </Head>
             <Nabvar />
+            <Sidebar />
             <Box sx={{ padding: '10px, 20px' }}>
                 {children}
             </Box>
