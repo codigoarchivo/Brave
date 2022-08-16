@@ -18,11 +18,11 @@ export const UIProvider: FC<UIData> = ({ children }) => {
     const [state, dispatch] = useReducer(uiReducer, UI_INITIAL_STATE)
 
     const openSideMenu = () => {
-        dispatch({ type: 'UI - OPEN Sidebar' })
+        dispatch({ type: 'UI - OPEN - ClOSE Sidebar', payload: true })
     }
-
+    
     const closeSideMenu = () => {
-        dispatch({ type: 'UI - CLOSE Sidebar' })
+        dispatch({ type: 'UI - OPEN - ClOSE Sidebar', payload: false })
     }
 
     return (

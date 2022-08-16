@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 
 import { Layout } from '../../components/layouts'
 
-const Services: NextPage = () => {
+const ServicesPage: NextPage = () => {
     return (
         <Layout title={"Services"}>
             <div>Services</div>
@@ -10,4 +10,4 @@ const Services: NextPage = () => {
     )
 }
 
-export default Services
+export default ServicesPage

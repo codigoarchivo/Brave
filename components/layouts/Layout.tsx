@@ -14,7 +14,7 @@ interface Props {
 
 export const Layout: FC<Props> = ({ title = 'name', children }) => {
     return (
-        <Box sx={{ flexFlow: 1 }}>
+        <>
             <Head>
                 <title>{title}</title>
             </Head>
@@ -24,6 +24,6 @@ export const Layout: FC<Props> = ({ title = 'name', children }) => {
             <Box sx={{ padding: '10px, 20px' }}>
                 {children}
             </Box>
-        </Box>
+        </>
     )
 }

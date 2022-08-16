@@ -25,6 +25,13 @@ export const lightTheme = createTheme({
                     backgroundColor: '#4a148c',
                 }
             }
+        },
+        MuiIconButton: {
+            styleOverrides: {
+                root: {
+                    color: '#eee',
+                }
+            }
         }
     }
 })

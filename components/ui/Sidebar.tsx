@@ -4,9 +4,7 @@ import { UIContext } from '../../context/ui';
 
 import { Box, Drawer, List, ListItem, Typography } from '@mui/material';
 
-import { rutaLink } from './';
-
-import { SomeButton } from '../../helper';
+import { rutaLink, SomeButton } from './';
 
 export const Sidebar = () => {
 

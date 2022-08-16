@@ -23,6 +23,8 @@ export const SomeButton: FC<PropsButton> = ({ href, startIcon, size, variant, na
         )
     })
 
+    MyButton.displayName = 'MyButton';
+
     return (
         <Link href={href} passHref>
             <MyButton />

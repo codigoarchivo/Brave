@@ -2,21 +2,16 @@ import { UIState } from './';
 // UIState proviene del UIProvider interface
 
 type UIActionType =
-    | { type: 'UI - OPEN Sidebar' }
-    | { type: 'UI - CLOSE Sidebar' }
+    | { type: 'UI - OPEN - ClOSE Sidebar', payload: boolean }
+
 
 export const uiReducer = (state: UIState, action: UIActionType): UIState => {
 
     switch (action.type) {
-        case 'UI - OPEN Sidebar':
+        case 'UI - OPEN - ClOSE Sidebar':
             return {
                 ...state,
-                sidemenuOpen: true
-            }
-        case 'UI - CLOSE Sidebar':
-            return {
-                ...state,
-                sidemenuOpen: false
+                sidemenuOpen: action.payload 
             }
         default:
             return state
