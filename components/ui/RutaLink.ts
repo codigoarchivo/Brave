@@ -8,7 +8,7 @@ import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 
-export const RutaLink = [
+export const rutaLink = [
   {
     href: "/",
     name: "Home",

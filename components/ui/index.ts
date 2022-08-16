@@ -1,4 +1,4 @@
 export * from "./Nabvar"
 export * from "./Sidebar"
 export * from "./Breadcrumb"
-export * from "./RutaLink"
+export * from "./rutaLink"

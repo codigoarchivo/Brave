@@ -2,14 +2,11 @@ import { useContext } from 'react';
 
 import { UIContext } from '../../context/ui';
 
-import { Box, Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { Box, Drawer, List, ListItem, Typography } from '@mui/material';
 
-import { RutaLink } from './';
+import { rutaLink } from './';
 
 import { SomeButton } from '../../helper';
-
-const menuItems: string[] = ['Inbox', 'Starred', 'Send Email', 'Drafts']
-
 
 export const Sidebar = () => {
 
@@ -30,7 +27,7 @@ export const Sidebar = () => {
 
                 <List>
                     {
-                        RutaLink.map((item, key) => (
+                        rutaLink.map((item, key) => (
                             <ListItem key={key}>
                                 <SomeButton  {...item} startIcon={<item.startIcon />} size={"small"} />
                             </ListItem>
