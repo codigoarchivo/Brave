@@ -4,8 +4,9 @@ import { UIContext } from '../../context/ui';
 
 import { Box, Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 
-import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
-import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
+import { RutaLink } from './';
+
+import { SomeButton } from '../../helper';
 
 const menuItems: string[] = ['Inbox', 'Starred', 'Send Email', 'Drafts']
 
@@ -29,27 +30,9 @@ export const Sidebar = () => {
 
                 <List>
                     {
-                        menuItems.map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 ? <InboxOutlinedIcon /> : <MailOutlineOutlinedIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        ))
-                    }
-                </List>
-
-                <Divider />
-
-                <List>
-                    {
-                        menuItems.map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 ? <InboxOutlinedIcon /> : <MailOutlineOutlinedIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                        RutaLink.map((item, key) => (
+                            <ListItem key={key}>
+                                <SomeButton  {...item} startIcon={<item.startIcon />} size={"small"} />
                             </ListItem>
                         ))
                     }
