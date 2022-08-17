@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 import { Box } from '@mui/material'
 
-import { Breadcrumb, Nabvar, Sidebar } from '../ui';
+import { Nabvar } from '../ui';
 
 
 interface Props {
@@ -19,8 +19,6 @@ export const Layout: FC<Props> = ({ title = 'name', children }) => {
                 <title>{title}</title>
             </Head>
             <Nabvar />
-            <Breadcrumb />
-            <Sidebar />
             <Box sx={{ padding: '10px, 20px' }}>
                 {children}
             </Box>

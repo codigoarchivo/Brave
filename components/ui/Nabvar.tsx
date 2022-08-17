@@ -14,7 +14,7 @@ import useTheme from '@mui/material/styles/useTheme';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-import { MenuNavbar } from './';
+import { MenuNavbar, Breadcrumb, Sidebar } from './';
 
 export const Nabvar = () => {
 
@@ -31,33 +31,37 @@ export const Nabvar = () => {
   const theme = useTheme();
 
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
-  
-  return (
-    <AppBar position='sticky' elevation={0}>
-      <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <IconButton sx={{ display: matches ? "none" : "flex" }} size='large' edge='start' color='inherit' onClick={openSideMenu}>
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6'>Jackson Quintero</Typography>
-        </Box>
 
-        <Box sx={{ display: matches ? "flex" : "none", alignItems: 'center', textAlign: 'center' }}>
-          <Tooltip title="Account settings">
-            <IconButton
-              onClick={handleClick}
-              size="small"
-              sx={{ ml: 2 }}
-              aria-controls={open ? 'account-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-            >
-              <MoreVertIcon />
+  return (
+    <>
+      <AppBar position='sticky' elevation={0}>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <IconButton sx={{ display: matches ? "none" : "flex" }} size='large' edge='start' color='inherit' onClick={openSideMenu}>
+              <MenuIcon />
             </IconButton>
-          </Tooltip>
-        </Box>
-        <MenuNavbar anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
-      </Toolbar>
-    </AppBar>
+            <Typography variant='h6'>Jackson Quintero</Typography>
+          </Box>
+
+          <Box sx={{ display: matches ? "flex" : "none", alignItems: 'center', textAlign: 'center' }}>
+            <Tooltip title="Account settings">
+              <IconButton
+                onClick={handleClick}
+                size="small"
+                sx={{ ml: 2 }}
+                aria-controls={open ? 'account-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+              >
+                <MoreVertIcon />
+              </IconButton>
+            </Tooltip>
+          </Box>
+          <MenuNavbar anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+        </Toolbar>
+      </AppBar>
+      <Breadcrumb />
+      <Sidebar />
+    </>
   )
 }

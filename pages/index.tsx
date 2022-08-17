@@ -9,7 +9,6 @@ const HomePage: NextPage = () => {
         Hola Mundo
       </h1>
     </Layout>
-
   )
 }
 
