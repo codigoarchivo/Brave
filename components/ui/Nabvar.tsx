@@ -9,12 +9,12 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import useTheme from '@mui/material/styles/useTheme';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import { MenuNavbar, Breadcrumb, Sidebar } from './';
+
+import styles from './Nabvar.module.css'
 
 export const Nabvar = () => {
 
@@ -28,22 +28,18 @@ export const Nabvar = () => {
 
   const open = Boolean(anchorEl);
 
-  const theme = useTheme();
-
-  const matches = useMediaQuery(theme.breakpoints.up('sm'));
-
   return (
     <>
       <AppBar position='sticky' elevation={0}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <IconButton sx={{ display: matches ? "none" : "flex" }} size='large' edge='start' color='inherit' onClick={openSideMenu}>
+          <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+            <IconButton className={styles.box__iconButton} size='large' edge='start' color='inherit' onClick={openSideMenu}>
               <MenuIcon />
             </IconButton>
             <Typography variant='h6'>Jackson Quintero</Typography>
           </Box>
 
-          <Box sx={{ display: matches ? "flex" : "none", alignItems: 'center', textAlign: 'center' }}>
+          <Box className={styles.box__tooltip}>
             <Tooltip title="Account settings">
               <IconButton
                 onClick={handleClick}
@@ -60,8 +56,12 @@ export const Nabvar = () => {
           <MenuNavbar anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
         </Toolbar>
       </AppBar>
-      <Breadcrumb />
-      <Sidebar />
+      <Box className={styles.box__breadcrumb}>
+        <Breadcrumb />
+      </Box>
+      <Box className={styles.box__sidebar}>
+        <Sidebar />
+      </Box>
     </>
   )
 }
