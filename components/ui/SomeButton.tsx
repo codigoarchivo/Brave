@@ -17,7 +17,7 @@ export const SomeButton: FC<PropsButton> = ({ href, startIcon, size, variant, na
 
     const MyButton = forwardRef<HTMLButtonElement, ButtonProps>(({ onClick, href }, ref) => {
         return (
-            <Button size={size} variant={variant} startIcon={startIcon} href={href} onClick={onClick} ref={ref}>
+            <Button size={size} className={'color'} variant={variant} startIcon={startIcon} href={href} onClick={onClick} ref={ref}>
                 {name}
             </Button>
         )

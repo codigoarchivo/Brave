@@ -1,3 +1,9 @@
 .MuiBreadcrumbs-ol {
   justify-content: right;
 }
+.color {
+  color: black;
+}
+.backgroundWhite {
+  background-color: '#efedee';
+}

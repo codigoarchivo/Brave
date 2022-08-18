@@ -30,13 +30,13 @@ export const Nabvar = () => {
 
   return (
     <>
-      <AppBar position='sticky' elevation={0}>
+      <AppBar elevation={0}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-            <IconButton className={styles.box__iconButton} size='large' edge='start' color='inherit' onClick={openSideMenu}>
+            <IconButton className={styles.box__iconButton} size='large' edge='start' onClick={openSideMenu}>
               <MenuIcon />
             </IconButton>
-            <Typography variant='h6'>Jackson Quintero</Typography>
+            <Typography variant='h6' className={"color"}>Jackson Quintero</Typography>
           </Box>
 
           <Box className={styles.box__tooltip}>
@@ -55,10 +55,10 @@ export const Nabvar = () => {
           </Box>
           <MenuNavbar anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
         </Toolbar>
+        <Box className={styles.box__breadcrumb}>
+          <Breadcrumb />
+        </Box>
       </AppBar>
-      <Box className={styles.box__breadcrumb}>
-        <Breadcrumb />
-      </Box>
       <Box className={styles.box__sidebar}>
         <Sidebar />
       </Box>

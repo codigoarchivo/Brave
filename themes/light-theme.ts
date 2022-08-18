@@ -22,14 +22,21 @@ export const lightTheme = createTheme({
             defaultProps: {},
             styleOverrides: {
                 root: {
-                    backgroundColor: '#4a148c',
+                    backgroundColor: 'transparent',
                 }
             }
         },
         MuiIconButton: {
             styleOverrides: {
                 root: {
-                    color: '#eee',
+                    color: '#00000',
+                }
+            }
+        },
+        MuiBreadcrumbs: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: 'transparent'
                 }
             }
         }
