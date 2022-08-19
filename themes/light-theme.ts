@@ -1,11 +1,12 @@
 import { createTheme } from "@mui/material";
-import { grey, red } from "@mui/material/colors";
+
+import { red } from "@mui/material/colors";
 
 export const lightTheme = createTheme({
     palette: {
         mode: "light",
         background: {
-            default: grey[300]
+            default: '#efedee'
         },
         primary: {
             main: '#fec80b'

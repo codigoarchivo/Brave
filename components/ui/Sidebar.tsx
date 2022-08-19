@@ -7,8 +7,10 @@ import { Box, Drawer, List, ListItem, Typography } from '@mui/material';
 import { rutaLink, SomeButton } from './';
 
 export const Sidebar = () => {
-
+    // useContext
     const { sidemenuOpen, closeSideMenu } = useContext(UIContext);
+    // rutaLink
+    const data = rutaLink()
 
 
     return (
@@ -25,9 +27,9 @@ export const Sidebar = () => {
 
                 <List>
                     {
-                        rutaLink.map((item, key) => (
+                        data.map((item, key) => (
                             <ListItem key={key}>
-                                <SomeButton  {...item} startIcon={<item.startIcon />} size={"small"} />
+                                <SomeButton  {...item} color={'secondary'} startIcon={<item.startIcon />} size={"small"} />
                             </ListItem>
                         ))
                     }

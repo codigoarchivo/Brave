@@ -36,7 +36,7 @@ export const Nabvar = () => {
             <IconButton className={styles.box__iconButton} size='large' edge='start' onClick={openSideMenu}>
               <MenuIcon />
             </IconButton>
-            <Typography variant='h6' className={"color"}>Jackson Quintero</Typography>
+            <Typography variant='h6'>Jackson Quintero</Typography>
           </Box>
 
           <Box className={styles.box__tooltip}>
