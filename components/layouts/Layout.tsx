@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react'
 
 import Head from 'next/head'
 
-import { Nabvar } from '../ui';
+import { FloatingButton, Nabvar } from '../ui';
 
 
 interface Props {
@@ -20,6 +20,7 @@ export const Layout: FC<Props> = ({ children, title = 'name' }) => {
             <main style={{ padding: '10px, 20px' }}>
                 {children}
             </main>
+            <FloatingButton />
         </>
     )
 }
