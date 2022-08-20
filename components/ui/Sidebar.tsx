@@ -8,16 +8,15 @@ import { RutaLink, SomeButton } from './';
 
 export const Sidebar = () => {
     // useContext
-    const { sidemenuOpen, closeSideMenu } = useContext(UIContext);
+    const { sidemenuOpen, toggleSideMenu } = useContext(UIContext);
     // rutaLink
     const data = RutaLink()
-
-
+    
     return (
         <Drawer
             anchor="left"
             open={sidemenuOpen}
-            onClose={closeSideMenu}
+            onClose={toggleSideMenu}
         >
             <Box sx={{ width: 250 }}>
 

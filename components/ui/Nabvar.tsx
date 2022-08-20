@@ -18,7 +18,7 @@ import styles from './Nabvar.module.css'
 
 export const Nabvar = () => {
 
-  const { openSideMenu } = useContext(UIContext)
+  const { toggleSideMenu } = useContext(UIContext)
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -33,7 +33,7 @@ export const Nabvar = () => {
       <AppBar elevation={0}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-            <IconButton className={styles.box__iconButton} size='large' edge='start' onClick={openSideMenu}>
+            <IconButton className={styles.box__iconButton} size='large' edge='start' onClick={toggleSideMenu}>
               <MenuIcon />
             </IconButton>
             <Typography variant='h6'>Jackson Quintero</Typography>

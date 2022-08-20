@@ -1,27 +1,34 @@
-import { FC } from 'react';
+import { useContext, FC } from 'react';
 
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
-
-import PersonAdd from '@mui/icons-material/PersonAdd';
+import LoginIcon from '@mui/icons-material/Login';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import LogoutIcon from '@mui/icons-material/Logout';
+
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import { UIContext } from '../../context/ui';
 
 interface PropsMenu {
-    anchorEl: any,
+    anchorEl?: Element | ((element: Element) => Element) | null | undefined,
     setAnchorEl: any
 }
 
 export const MenuNavbar: FC<PropsMenu> = ({ anchorEl, setAnchorEl }) => {
+
+    const { openLigth, lightDarkMenu } = useContext(UIContext);
 
     const open = Boolean(anchorEl);
 
     const handleClose = () => {
         setAnchorEl(null);
     };
+
     return (
         <Menu
             anchorEl={anchorEl}
@@ -59,17 +66,24 @@ export const MenuNavbar: FC<PropsMenu> = ({ anchorEl, setAnchorEl }) => {
             anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
             <MenuItem>
-                <Avatar /> Profile
-            </MenuItem>
-            <MenuItem>
-                <Avatar /> My account
+                <Avatar />
+                Jackson Quintero
+                <ListItemIcon sx={{ marginLeft: 2 }} onClick={() => openLigth()}>
+                    {lightDarkMenu === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
+                </ListItemIcon>
             </MenuItem>
             <Divider />
             <MenuItem>
                 <ListItemIcon>
-                    <PersonAdd fontSize="small" />
+                    <LoginIcon fontSize="small" />
                 </ListItemIcon>
-                Add another account
+                Sing In
+            </MenuItem>
+            <MenuItem>
+                <ListItemIcon>
+                    <LogoutIcon fontSize="small" />
+                </ListItemIcon>
+                Sing Up
             </MenuItem>
             <MenuItem>
                 <ListItemIcon>
