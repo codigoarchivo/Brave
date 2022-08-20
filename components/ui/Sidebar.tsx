@@ -4,13 +4,13 @@ import { UIContext } from '../../context/ui';
 
 import { Box, Drawer, List, ListItem, Typography } from '@mui/material';
 
-import { rutaLink, SomeButton } from './';
+import { RutaLink, SomeButton } from './';
 
 export const Sidebar = () => {
     // useContext
     const { sidemenuOpen, closeSideMenu } = useContext(UIContext);
     // rutaLink
-    const data = rutaLink()
+    const data = RutaLink()
 
 
     return (

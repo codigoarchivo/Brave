@@ -13,7 +13,7 @@ import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import { en } from '../../translations/en';
 import { es } from '../../translations/es';
 
-export const rutaLink = () => {
+export const RutaLink = () => {
 
   const { locale } = useRouter()
 
