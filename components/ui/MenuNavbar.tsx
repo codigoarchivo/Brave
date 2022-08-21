@@ -12,7 +12,11 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import { UIContext } from '../../context/ui';
+
+import { useTheme } from '@mui/material';
+
+import { ColorsContext } from '../../context/colors/ColorsContex';
+
 
 interface PropsMenu {
     anchorEl?: Element | ((element: Element) => Element) | null | undefined,
@@ -21,13 +25,15 @@ interface PropsMenu {
 
 export const MenuNavbar: FC<PropsMenu> = ({ anchorEl, setAnchorEl }) => {
 
-    const { openLigth, lightDarkMenu } = useContext(UIContext);
+    const { toggleColorMode } = useContext(ColorsContext);
 
     const open = Boolean(anchorEl);
 
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const theme = useTheme();
 
     return (
         <Menu
@@ -68,8 +74,8 @@ export const MenuNavbar: FC<PropsMenu> = ({ anchorEl, setAnchorEl }) => {
             <MenuItem>
                 <Avatar />
                 Jackson Quintero
-                <ListItemIcon sx={{ marginLeft: 2 }} onClick={() => openLigth()}>
-                    {lightDarkMenu === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
+                <ListItemIcon sx={{ marginLeft: 2 }} onClick={toggleColorMode}>
+                    {theme.palette.mode === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
                 </ListItemIcon>
             </MenuItem>
             <Divider />

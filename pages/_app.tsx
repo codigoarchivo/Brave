@@ -1,39 +1,23 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
-
 import type { AppProps } from 'next/app'
 
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
+import { CssBaseline } from '@mui/material'
 
-import { lightDarkTheme } from '../themes';
+import { UIProvider } from '../context/ui'
 
-import { UIContext, UIProvider } from '../context/ui'
+import { ColorsProvider } from '../context/colors';
 
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [mode, setColorTheme] = useState<string>('light')
-
-  const ColorTheme = () => {
-    const { lightDarkMenu } = useContext(UIContext);
-
-    useEffect(() => {
-      setColorTheme(lightDarkMenu)
-    }, [lightDarkMenu])
-
-    return null
-  }
-
-  const theme = useMemo(() => createTheme(lightDarkTheme(mode)), [mode]);
-
   return (
     <>
-      <CssBaseline />
-      <UIProvider>
-        <ColorTheme />
-        <ThemeProvider theme={theme}>
+      <ColorsProvider>
+        <CssBaseline />
+        <UIProvider>
           <Component {...pageProps} />
-        </ThemeProvider>
-      </UIProvider>
+        </UIProvider>
+      </ColorsProvider>
+
     </>
 
   )
