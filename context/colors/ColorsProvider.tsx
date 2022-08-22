@@ -1,10 +1,11 @@
 import { FC, ReactNode, useState, useMemo, useEffect } from 'react';
 
-import { createTheme, ThemeProvider } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 
-import { lightDarkTheme } from '../../themes';
+import { lightTheme, darkTheme } from '../../themes';
 
 import { ColorsContext } from './';
+
 
 
 interface PropsChildren {
@@ -13,20 +14,20 @@ interface PropsChildren {
 
 export const ColorsProvider: FC<PropsChildren> = ({ children }) => {
 
-    const [mode, setMode] = useState<string | null>(null);
+    const [mode, setMode] = useState<string | null>('light');
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            setMode(localStorage.getItem('change'))
+            setMode(localStorage.getItem('mode'))
         }
     }, [])
-    
+
     const colorMode = useMemo(
         () => ({
             toggleColorMode: () => {
                 setMode((prevMode) => {
                     const nexMode = prevMode === 'light' ? 'dark' : 'light'
-                    localStorage.setItem('change', nexMode)
+                    localStorage.setItem('mode', nexMode)
                     return nexMode
                 }
                 );
@@ -35,7 +36,7 @@ export const ColorsProvider: FC<PropsChildren> = ({ children }) => {
         [],
     );
 
-    const theme = useMemo(() => createTheme(lightDarkTheme(mode ?? 'light')), [mode]);
+    const theme = useMemo(() => mode === 'light' ? lightTheme : darkTheme, [mode]);
 
     return (
         <ColorsContext.Provider value={colorMode}>

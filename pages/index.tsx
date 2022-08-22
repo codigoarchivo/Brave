@@ -44,7 +44,12 @@ const HomePage: NextPage = () => {
             </Typography>
           </Box>
           <Root>
-            <Divider textAlign="left" sx={{ fontSize: 25 }}>{locale === 'en' ? en.pageHome.c : es.pageHome.c}</Divider>
+            <Divider textAlign="left" sx={{
+              fontSize: 25, 
+              "&::before, &::after": {
+                borderColor: "secondary.light",
+              }
+            }}>{locale === 'en' ? en.pageHome.c : es.pageHome.c}</Divider>
           </Root>
         </Grid>
         <Grid item xs={6} display={'flex'} justifyContent={'center'} alignItems={"flex-end"} sx={{ position: 'relative' }}>

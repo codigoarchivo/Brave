@@ -75,7 +75,7 @@ export const MenuNavbar: FC<PropsMenu> = ({ anchorEl, setAnchorEl }) => {
                 <Avatar />
                 Jackson Quintero
                 <ListItemIcon sx={{ marginLeft: 2 }} onClick={toggleColorMode}>
-                    {theme.palette.mode === 'light' ? <LightModeIcon /> : <DarkModeIcon />}
+                    {theme.palette.mode !== 'light' ? <LightModeIcon /> : <DarkModeIcon />}
                 </ListItemIcon>
             </MenuItem>
             <Divider />
