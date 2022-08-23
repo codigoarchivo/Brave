@@ -50,7 +50,7 @@ export const Layout: FC<Props> = ({ children, title = 'name' }) => {
             <Nabvar />
 
             {query === 'success' ? (
-                <main style={{ padding: '10px, 20px' }}>
+                <main>
                     {children}
                 </main>
             ) : (

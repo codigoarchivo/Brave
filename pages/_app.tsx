@@ -12,8 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ColorsProvider>
-        <CssBaseline />
         <UIProvider>
+          <CssBaseline />
           <Component {...pageProps} />
         </UIProvider>
       </ColorsProvider>

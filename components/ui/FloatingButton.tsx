@@ -55,14 +55,12 @@ export const FloatingButton = () => {
         },
     ];
 
-
     return (
         <>
             {fabs.map((fab, index) => (
-                <div key={fab.color} >
+                <div key={fab.color} style={{ position: "fixed", bottom: 0, left: 0 }}>
                     <Link href={asPath} locale={fab.label}>
                         <Zoom
-
                             in={true}
                             timeout={transitionDuration}
                             style={{

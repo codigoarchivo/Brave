@@ -9,15 +9,18 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
+import { useScrollTrigger } from '@mui/material';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import { MenuNavbar, Breadcrumb, Sidebar } from './';
 
-import styles from './Nabvar.module.css'
+interface Props {
+  window?: () => Window;
+}
 
-export const Nabvar = () => {
-
+export const Nabvar = (props: Props) => {
+  const { window } = props;
   const { toggleSideMenu } = useContext(UIContext)
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -28,18 +31,24 @@ export const Nabvar = () => {
 
   const open = Boolean(anchorEl);
 
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
   return (
     <>
-      <AppBar elevation={0}>
+      <AppBar elevation={trigger ? 6 : 0} sx={{ backgroundColor: trigger ? 'primary.main' : 'transparent', transition: 'all .6s' }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
-            <IconButton className={styles.box__iconButton} size='large' edge='start' onClick={toggleSideMenu}>
+          <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+            <IconButton sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }} size='large' edge='start' onClick={toggleSideMenu}>
               <MenuIcon />
             </IconButton>
             <Typography variant='h6'>Jackson Quintero</Typography>
           </Box>
 
-          <Box className={styles.box__tooltip}>
+          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
             <Tooltip title="Account settings">
               <IconButton
                 onClick={handleClick}
@@ -55,11 +64,11 @@ export const Nabvar = () => {
           </Box>
           <MenuNavbar anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
         </Toolbar>
-        <Box className={styles.box__breadcrumb}>
+        <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
           <Breadcrumb />
         </Box>
       </AppBar>
-      <Box className={styles.box__sidebar}>
+      <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }}>
         <Sidebar />
       </Box>
     </>
