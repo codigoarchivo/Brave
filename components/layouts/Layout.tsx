@@ -3,6 +3,7 @@ import React, { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 
 import { FloatingButton, Nabvar, Spinner } from '../ui';
+import { Box } from '@mui/material';
 
 interface Props {
     title?: string,
@@ -51,13 +52,18 @@ export const Layout: FC<Props> = ({ children, title = 'name' }) => {
 
             {query === 'success' ? (
                 <main>
-                    {children}
+                    <Box sx={{ marginTop: { xs: '50px', md: 0 } }}>
+                        {children}
+
+                        <FloatingButton />
+
+                    </Box>
+
+
                 </main>
             ) : (
                 <Spinner />
             )}
-
-            <FloatingButton />
         </>
     )
 }

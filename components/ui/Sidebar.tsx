@@ -6,14 +6,22 @@ import { Box, Drawer, List, ListItem, Typography } from '@mui/material';
 
 import { RutaLink, SomeButton } from './';
 
-export const Sidebar = () => {
+interface Props {
+    window?: () => Window;
+}
+
+export const Sidebar = (props: Props) => {
+    const { window } = props;
     // useContext
     const { sidemenuOpen, toggleSideMenu } = useContext(UIContext);
     // rutaLink
     const data = RutaLink()
-    
+
+    const container = window !== undefined ? () => window().document.body : undefined;
+
     return (
         <Drawer
+            container={container}
             anchor="left"
             open={sidemenuOpen}
             onClose={toggleSideMenu}

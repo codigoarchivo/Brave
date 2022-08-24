@@ -21,6 +21,7 @@ interface Props {
 
 export const Nabvar = (props: Props) => {
   const { window } = props;
+
   const { toggleSideMenu } = useContext(UIContext)
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -39,7 +40,7 @@ export const Nabvar = (props: Props) => {
 
   return (
     <>
-      <AppBar elevation={trigger ? 6 : 0} sx={{ backgroundColor: trigger ? 'primary.main' : 'transparent', transition: 'all .6s' }}>
+      <AppBar component="nav" elevation={trigger ? 6 : 0} sx={{ backgroundColor: trigger ? 'primary.main' : 'transparent', transition: 'all .6s' }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
             <IconButton sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }} size='large' edge='start' onClick={toggleSideMenu}>

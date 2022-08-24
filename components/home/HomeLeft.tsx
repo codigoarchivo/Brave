@@ -17,21 +17,21 @@ export const HomeLeft = () => {
     const { locale } = useRouter()
 
     const Root = styled('div')(({ theme }) => ({
-      width: '100%',
-      ...theme.typography.body2,
-      '& > :not(style) + :not(style)': {
-        marginTop: theme.spacing(2),
-      },
+        width: '100%',
+        ...theme.typography.body2,
+        '& > :not(style) + :not(style)': {
+            marginTop: theme.spacing(2),
+        },
     }));
-  
+
     return (
         <>
-            <Box sx={{ width: '100%', textAlign: 'center', marginBottom: 10, position: 'relative' }}>
-                <Box sx={{ backgroundColor: 'primary.main', height: '20vh', width: '70%', position: 'absolute' }}></Box>
-                <Typography variant={'h1'} sx={{ fontWeight: 500, position: 'relative' }}>
+            <Box sx={{ width: '100%', textAlign: 'center', margin: { xs: '40px 0', sm: '43px 0', md: '55px 0' }, position: 'relative' }}>
+                <Box sx={{ backgroundColor: 'primary.main', height: { xs: '15vh', sm: '20vh', md: '15vh' }, width: '70%', position: 'absolute' }}></Box>
+                <Typography sx={{ typography: { xs: 'h2', sm: 'h1' }, position: 'relative' }}>
                     {locale === 'en' ? en.pageHome.a : es.pageHome.a}
                 </Typography>
-                <Typography variant={'h1'} marginLeft={10} sx={{ fontWeight: 500, position: 'relative' }}>
+                <Typography marginLeft={10} sx={{ typography: { xs: 'h2', sm: 'h1' }, position: 'relative' }}>
                     {locale === 'en' ? en.pageHome.b : es.pageHome.b}
                 </Typography>
             </Box>
