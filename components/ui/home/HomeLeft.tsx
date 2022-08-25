@@ -8,8 +8,8 @@ import Divider from '@mui/material/Divider'
 
 import Typography from '@mui/material/Typography'
 
-import { en } from '../../translations/en';
-import { es } from '../../translations/es';
+import { en } from '../../../translations/en';
+import { es } from '../../../translations/es';
 
 
 
@@ -37,7 +37,7 @@ export const HomeLeft = () => {
             </Box>
             <Root>
                 <Divider textAlign="left" sx={{
-                    fontSize: 25,
+                    fontSize: { xs: 18, md: 25 },
                     "&::before, &::after": {
                         borderColor: "secondary.light",
                     }

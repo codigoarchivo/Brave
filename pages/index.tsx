@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 
 import Grid from '@mui/material/Grid'
 
-import { HomeLeft, HomeRight } from '../components/home';
+import { HomeLeft, HomeRight } from '../components/ui/home';
 
 const HomePage: NextPage = () => {
   return (
