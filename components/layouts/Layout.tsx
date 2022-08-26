@@ -53,6 +53,7 @@ export const Layout: FC<Props> = ({ children, title = 'name' }) => {
             {query === 'success' ? (
                 <main>
                     <Box sx={{ marginTop: { xs: '50px', md: 0 } }}>
+                        
                         {children}
 
                         <FloatingButton />
