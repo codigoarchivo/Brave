@@ -4,8 +4,10 @@ import type { NextPage } from 'next'
 
 import Grid from '@mui/material/Grid'
 
+import Container from '@mui/material/Container';
+
 import { HomeLeft, HomeRight } from '../components/ui/home';
-import { Container } from '@mui/system';
+
 
 const HomePage: NextPage = () => {
   return (

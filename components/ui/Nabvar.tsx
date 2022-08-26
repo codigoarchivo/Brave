@@ -1,5 +1,7 @@
 import React, { MouseEvent, useContext, useState } from 'react'
 
+import { useRouter } from 'next/router';
+
 import { UIContext } from '../../context/ui';
 
 import AppBar from '@mui/material/AppBar'
@@ -20,6 +22,9 @@ interface Props {
 }
 
 export const Nabvar = (props: Props) => {
+
+  const { asPath } = useRouter()
+
   const { window } = props;
 
   const { toggleSideMenu } = useContext(UIContext)
@@ -40,7 +45,7 @@ export const Nabvar = (props: Props) => {
 
   return (
     <>
-      <AppBar component="nav" elevation={trigger ? 6 : 0} sx={{ backgroundColor: trigger ? 'primary.main' : 'transparent', transition: 'all .6s' }}>
+      <AppBar component="nav" elevation={trigger ? 6 : 0} sx={{ backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main', transition: 'all .6s' }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
             <IconButton sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }} size='large' edge='start' onClick={toggleSideMenu}>

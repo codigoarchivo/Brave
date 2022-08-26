@@ -8,10 +8,7 @@ import Divider from '@mui/material/Divider'
 
 import Typography from '@mui/material/Typography'
 
-import { en } from '../../../translations/en';
-import { es } from '../../../translations/es';
-
-
+import { en, es } from '../../../translations';
 
 export const HomeLeft = () => {
     const { locale } = useRouter()

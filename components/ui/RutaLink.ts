@@ -10,8 +10,9 @@ import PersonIcon from '@mui/icons-material/Person';
 
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 
-import { en } from '../../translations/en';
-import { es } from '../../translations/es';
+import { en, es } from '../../translations';
+
+
 
 export const RutaLink = () => {
 

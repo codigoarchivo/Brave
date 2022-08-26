@@ -48,20 +48,21 @@ export const Layout: FC<Props> = ({ children, title = 'name' }) => {
             <Head>
                 <title>{title}</title>
             </Head>
-            <Nabvar />
 
             {query === 'success' ? (
-                <main>
-                    <Box sx={{ marginTop: { xs: '50px', md: 0 } }}>
-                        
+                <>
+                    <Nabvar />
+                    <main>
+
+
                         {children}
 
                         <FloatingButton />
 
-                    </Box>
 
 
-                </main>
+                    </main>
+                </>
             ) : (
                 <Spinner />
             )}
