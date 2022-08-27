@@ -18,10 +18,10 @@ export const AboutRight = () => {
     const { locale } = useRouter()
     return (
         <Box>
-            <Typography variant={'body1'} className={styles['about__text-p']}>{locale === "en" ? en.pageAbout.a : es.pageAbout.a} </Typography>
+            <Typography variant={'body1'} sx={{ lineHeight: 1.9, wordBreak: 'break-word', marginBottom: { xs: '1rem', md: '2rem' } }}>{locale === "en" ? en.pageAbout.a : es.pageAbout.a} </Typography>
 
-            <Button variant="outlined" endIcon={<DownloadForOfflineIcon/>}>
-                {locale === "en" ? en.pageAbout.e : es.pageAbout.e} 
+            <Button sx={{ margin: { xs: '0 0 1rem 6rem', md: '0 0 2rem 6rem' } }} variant="outlined" endIcon={<DownloadForOfflineIcon />}>
+                {locale === "en" ? en.pageAbout.e : es.pageAbout.e}
             </Button>
         </Box>
     )

@@ -46,7 +46,7 @@ export const Nabvar = (props: Props) => {
   return (
     <>
       <AppBar component="nav" elevation={trigger ? 6 : 0} sx={{ backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main', transition: 'all .6s' }}>
-        <Toolbar sx={{ justifyContent: "space-between" }}>
+        <Toolbar sx={{ minHeight: { xs: '48px', md: '64px' }, justifyContent: "space-between" }}>
           <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
             <IconButton sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }} size='large' edge='start' onClick={toggleSideMenu}>
               <MenuIcon />
@@ -70,10 +70,13 @@ export const Nabvar = (props: Props) => {
           </Box>
           <MenuNavbar anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
         </Toolbar>
+
         <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
           <Breadcrumb />
         </Box>
+
       </AppBar>
+
       <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }}>
         <Sidebar />
       </Box>
