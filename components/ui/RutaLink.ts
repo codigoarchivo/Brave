@@ -30,7 +30,7 @@ export const RutaLink = () => {
       startIcon: PersonIcon
     },
     {
-      href: "/services",
+      href: "/skills",
       name: locale === "en" ? en.pageLayout.c : es.pageLayout.c,
       startIcon: DesignServicesIcon
     },
