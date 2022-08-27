@@ -2,7 +2,7 @@ export const en = {
    pageLayout: {
       a: 'Home',
       b: 'About Me',
-      c: 'Services',
+      c: 'skills',
       d: 'work',
       e: 'Contact',
    },
