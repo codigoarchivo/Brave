@@ -42,8 +42,8 @@ const SkillsPage: NextPage = () => {
 
     return (
         <Layout title={"Services"}>
-            <Container maxWidth="xl" sx={{ margin: { xs: '55px 0', sm: '60px 0', md: '150px 0' } }}>
-                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent={'center'} sx={{ height: 'calc(100vh - 250px)', backgroundColor: 'background.default' }}>
+            <Container maxWidth="xl" sx={{ margin: { xs: '80px 0', sm: '100px 0', md: '150px 0' } }}>
+                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} justifyContent={'center'} sx={{ height: 'min-content', backgroundColor: 'background.default' }}>
                     {data.map((item, i) => (
                         <CardItemSkills key={i} {...item} />
                     ))}
