@@ -26,6 +26,13 @@ export const darkTheme = createTheme({
                     backgroundColor: 'transparent',
                 }
             }
+        },
+        MuiCardContent: {
+            styleOverrides: {
+                root: {
+                    paddingBottom: '14px !important'
+                }
+            }
         }
     }
 })

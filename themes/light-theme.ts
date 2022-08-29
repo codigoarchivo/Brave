@@ -27,5 +27,12 @@ export const lightTheme = createTheme({
                 }
             }
         },
+        MuiCardContent: {
+            styleOverrides: {
+                root: {
+                    paddingBottom: '14px !important'
+                }
+            }
+        }
     }
 })
