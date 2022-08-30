@@ -29,7 +29,7 @@ export const WorkScreen: FC<Props> = ({ name, description, status, image }) => {
     return (
         <Card>
             <CardContent >
-                <Box sx={{ margin: '0 auto', position: 'relative', width: { xs: '40%' }, height: { xs: 300 } }}>
+                <Box sx={{ margin: '0 auto', position: 'relative', width: { xs: '100%' }, height: { xs: 300 } }}>
                     <Image
                         src={image}
                         alt={name}
