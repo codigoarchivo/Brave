@@ -1,15 +1,20 @@
 import Button from '@mui/material/Button'
+
 import Card from '@mui/material/Card'
+
 import CardContent from '@mui/material/CardContent'
+
 import Grid from '@mui/material/Grid'
+
 import TextField from '@mui/material/TextField'
+
 import Typography from '@mui/material/Typography'
 
 export const ContactScreen = () => {
     return (
         <>
             <Grid>
-                <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0 auto" }}>
+                <Card sx={{ padding: "20px 5px", margin: "0 auto" }}>
                     <CardContent>
                         <Typography gutterBottom variant="h5">
                             Contact Us
