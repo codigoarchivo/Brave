@@ -17,5 +17,23 @@ export const es = {
     c: 'Sobre',
     d: 'Mi',
     e: 'Descargar CV',
+  },
+  pageContact: {
+    a: 'Contacto',
+    b: 'Con',
+    c: 'Migo',
+    d: 'Más Información',
+    e: 'Complete el formulario y me pondré en contacto con usted dentro de las 24 horas.',
+    f: 'Primer Nombre',
+    g: 'Ingrese el Nombre',
+    h: 'Apellido',
+    i: 'Introduzca el apellido',
+    j: 'Correo electrónico',
+    k: 'Ingrese correo electrónico',
+    l: 'Teléfono',
+    ll: 'Ingresa Número Telefónico',
+    m: 'Mensaje',
+    n: 'Type your message here',
+    o: 'Enviar',
   }
 };

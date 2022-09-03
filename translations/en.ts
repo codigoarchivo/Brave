@@ -17,5 +17,23 @@ export const en = {
       c: 'About',
       d: 'Me',
       e: 'Download CV',
+   },
+   pageContact: {
+      a: 'Contact',
+      b: 'With',
+      c: 'Me',
+      d: 'More Information',
+      e: 'Complete the form and I will contact you within 24 hours.',
+      f: 'First Name',
+      g: 'Enter First Name',
+      h: 'Last Name',
+      i: 'Enter last name',
+      j: 'Email',
+      k: 'Enter email',
+      l: 'Phone',
+      ll: 'Enter phone number',
+      m: 'Message',
+      n: 'Escribe tu mensaje aquí',
+      o: 'Submit',
    }
 };
