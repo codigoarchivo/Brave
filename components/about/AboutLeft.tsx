@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack'
 
 import Typography from '@mui/material/Typography'
 
-import { en, es } from '../../../translations'
+import { en, es } from '../../translations'
 
 export const AboutLeft = () => {
   const { locale } = useRouter()

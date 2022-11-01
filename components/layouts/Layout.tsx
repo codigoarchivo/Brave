@@ -1,9 +1,8 @@
-import React, { FC, ReactNode, useEffect, useRef, useState } from 'react'
+import { FC, ReactNode } from 'react'
 
 import Head from 'next/head'
 
-import { FloatingButton, Nabvar, Spinner } from '../ui';
-import { Box } from '@mui/material';
+import { FloatingButton, Nabvar } from '../ui';
 
 interface Props {
     title?: string,
@@ -11,37 +10,7 @@ interface Props {
 }
 
 export const Layout: FC<Props> = ({ children, title = 'name' }) => {
-    const [query, setQuery] = useState('progress');
 
-    const timerRef = useRef<number>();
-
-    useEffect(
-        () => () => {
-            clearTimeout(timerRef.current);
-        },
-        [],
-    );
-
-    useEffect(() => {
-        const handleClickQuery = () => {
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
-            }
-
-            if (query !== 'progress') {
-                setQuery('progress');
-                return;
-            }
-
-            setQuery('progress');
-
-            timerRef.current = window.setTimeout(() => {
-                setQuery('success');
-            }, 2000);
-        };
-
-        handleClickQuery();
-    }, [])
 
     return (
         <>
@@ -49,23 +18,21 @@ export const Layout: FC<Props> = ({ children, title = 'name' }) => {
                 <title>{title}</title>
             </Head>
 
-            {query === 'success' ? (
-                <>
-                    <Nabvar />
-                    <main>
+
+            <>
+                <Nabvar />
+                <main>
 
 
-                        {children}
+                    {children}
 
-                        <FloatingButton />
+                    <FloatingButton />
 
 
 
-                    </main>
-                </>
-            ) : (
-                <Spinner />
-            )}
+                </main>
+            </>
+
         </>
     )
 }

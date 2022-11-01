@@ -4,7 +4,9 @@ import { UIContext } from '../../context/ui';
 
 import { Box, Drawer, List, ListItem, Typography } from '@mui/material';
 
-import { RutaLink, SomeButton } from './';
+import {  SomeButton } from './';
+
+import { RutaLink } from '../routes';
 
 interface Props {
     window?: () => Window;

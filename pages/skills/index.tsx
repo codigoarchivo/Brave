@@ -6,7 +6,7 @@ import Container from '@mui/material/Container';
 
 import Grid from '@mui/material/Grid'
 
-import { CardItemSkills } from '../../components/ui/skills';
+import { CardItemSkills } from '../../components/skills';
 
 
 interface dataEntry {

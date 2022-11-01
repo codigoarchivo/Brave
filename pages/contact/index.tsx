@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 
 import { Layout } from '../../components/layouts'
 
-import { InformationScreen, ContactScreen } from '../../components/ui/contact';
+import { InformationScreen, ContactScreen } from '../../components/contact';
 
 const ContactPage: NextPage = () => {
   return (

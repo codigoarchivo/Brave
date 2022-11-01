@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+.MuiBreadcrumbs-ol {
+  justify-content: right;
+}
+
+.color-p {
+  color: $color-primary;
+}
+.color-t {
+  color: $text-primary;
+}
+.bg-p {
+  background-color: $color-primary;
+}
+.bg-t {
+  background-color: $color-primary;
+}

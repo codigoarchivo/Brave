@@ -1,3 +1,7 @@
+.box__background-color {
+  height: -webkit-fill-available;
+}
+
 @media only screen and (min-width: 600px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
   .box__image {
     width: 25%;
@@ -8,8 +12,9 @@
     width: 60%;
   }
 }
+
 @media only screen and (min-width: 768px) and (max-device-width: 820px) and (-webkit-min-device-pixel-ratio: 1) {
-  .box__background-yellod {
+  .box__background-color {
     height: 40vh;
   }
   .box__image {
@@ -21,6 +26,7 @@
     width: 60%;
   }
 }
+
 @media only screen and (min-width: 821px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 1) {
   .box__image {
     width: 24%;

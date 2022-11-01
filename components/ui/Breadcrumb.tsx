@@ -2,7 +2,9 @@ import React from 'react'
 
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 
-import { RutaLink, SomeButton } from './';
+import {  SomeButton } from './';
+
+import { RutaLink } from '../routes';
 
 export const Breadcrumb = () => {
   // rutaLink

@@ -12,7 +12,7 @@ import TextField from '@mui/material/TextField'
 
 import Typography from '@mui/material/Typography'
 
-import { en, es } from '../../../translations'
+import { en, es } from '../../translations'
 
 export const ContactScreen = () => {
     const { locale } = useRouter()

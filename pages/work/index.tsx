@@ -3,7 +3,7 @@ import Container from '@mui/material/Container'
 import { NextPage } from 'next'
 
 import { Layout } from '../../components/layouts'
-import { WorkScreen } from '../../components/ui/work'
+import { WorkScreen } from '../../components/work'
 
 import Stack from '@mui/material/Stack';
 // Import Swiper React components
