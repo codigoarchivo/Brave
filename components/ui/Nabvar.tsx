@@ -51,7 +51,7 @@ export const Nabvar = (props: Props) => {
             <IconButton sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }} size='large' edge='start' onClick={toggleSideMenu}>
               <MenuIcon />
             </IconButton>
-            <Typography variant='h6'>Jackson Quintero</Typography>
+            <Typography ml={3} color={'secondary'} variant='h6'>Jackson Quintero</Typography>
           </Box>
 
           <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
