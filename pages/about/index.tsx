@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid'
 
 import Container from '@mui/material/Container';
 
-import { AboutLeft, AboutRight } from '../../components/ui/about';
+import { AboutLeft, AboutRight } from '../../components/about';
 
 
 const About: NextPage = () => {
