@@ -6,7 +6,7 @@ import { UIProvider } from '../context/ui'
 
 import { ColorsProvider } from '../context/colors';
 
-import '../styles/globals.css'
+import '../sass/styles.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
