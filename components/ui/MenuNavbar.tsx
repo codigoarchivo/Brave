@@ -13,7 +13,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
-import { useTheme } from '@mui/material';
+import { useTheme, Typography } from '@mui/material';
 
 import { ColorsContext } from '../../context/colors/ColorsContex';
 
@@ -73,7 +73,7 @@ export const MenuNavbar: FC<PropsMenu> = ({ anchorEl, setAnchorEl }) => {
         >
             <MenuItem>
                 <Avatar />
-                Jackson Quintero
+                <Typography>Jackson Quintero</Typography>
                 <ListItemIcon sx={{ marginLeft: 2 }} onClick={toggleColorMode}>
                     {theme.palette.mode !== 'light' ? <LightModeIcon /> : <DarkModeIcon />}
                 </ListItemIcon>
