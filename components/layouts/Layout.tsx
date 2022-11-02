@@ -1,5 +1,7 @@
 import { FC, ReactNode } from 'react'
 
+import Box from '@mui/material/Box';
+
 import Head from 'next/head'
 
 import { FloatingButton, Nabvar } from '../ui';
@@ -24,7 +26,9 @@ export const Layout: FC<Props> = ({ children, title = 'name' }) => {
                 <main>
 
 
-                    {children}
+                    <Box className="fadeIn">
+                        {children}
+                    </Box>
 
                     <FloatingButton />
 
