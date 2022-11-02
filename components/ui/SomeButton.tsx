@@ -8,8 +8,8 @@ interface PropsButton {
     name: string,
     href: string,
     startIcon: any,
-    color?: "primary" | "secondary",
-    variant?: "text" | "outlined" | "contained" | undefined,
+    color?: any,
+    variant?: any,
     size?: "small" | "medium" | "large" | undefined,
 }
 
