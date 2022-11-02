@@ -14,6 +14,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { useScrollTrigger } from '@mui/material';
+import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -52,7 +53,7 @@ export const Nabvar = (props: Props) => {
     disableHysteresis: true,
     threshold: 100,
   });
-  
+
   return (
     <>
       <AppBar component="nav" elevation={1} sx={{ backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main', transition: 'all .6s' }}>
@@ -77,7 +78,24 @@ export const Nabvar = (props: Props) => {
                 src="favicon.ico"
               />
             </NextLink>
-            <Typography ml={3} color={theme.palette.text.secondary} variant='h6'>Jackson Quintero</Typography>
+            {/* <Typography ml={3} color={theme.palette.text.secondary} variant='h6'>Jackson Quintero</Typography> */}
+            <Box position={'relative'} >
+              <Box className="content">
+                <div className="content__container" >
+                  <Typography variant='h6' component='h6' className="content__container__text">
+                    Hello
+                  </Typography>
+
+                  <ul className="content__container__list">
+                    <li className="content__container__list__item">world !</li>
+                    <li className="content__container__list__item">Jackson !</li>
+                    <li className="content__container__list__item">users !</li>
+                    <li className="content__container__list__item">everybody !</li>
+                  </ul>
+                </div>
+              </Box>
+            </Box>
+
           </Box>
 
           <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
@@ -94,8 +112,11 @@ export const Nabvar = (props: Props) => {
               </IconButton>
             </Tooltip>
           </Box>
-          <MenuNavbar anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
         </Toolbar>
+
+        <Box display='flex'>
+          <MenuNavbar open={open} anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+        </Box>
 
         <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
           <Breadcrumb />
