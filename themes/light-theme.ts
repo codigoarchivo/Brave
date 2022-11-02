@@ -6,10 +6,10 @@ export const lightTheme = createTheme({
         mode: "light",
         // palette values for light mode
         background: {
-            default: '#fff'
+            default: '#E1E2E1'
         },
         primary: {
-            main: '#2f314e'
+            main: '#2f92b7'
         },
         secondary: {
             main: '#080826'

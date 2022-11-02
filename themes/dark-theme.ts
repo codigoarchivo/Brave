@@ -6,13 +6,13 @@ export const darkTheme = createTheme({
         mode: "dark",
         // palette values for dark mode
         background: {
-            default: '#080826',
+            default: '#006487',
         },
         primary: {
-            main: '#2f314e'
+            main: '#2f92b7'
         },
         secondary: {
-            main: '#fff'
+            main: '#E1E2E1'
         },
         error: {
             main: red.A400

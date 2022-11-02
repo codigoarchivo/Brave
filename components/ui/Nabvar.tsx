@@ -1,8 +1,10 @@
 import React, { MouseEvent, useContext, useState } from 'react'
 
+import NextLink from 'next/link';
+
 import { useRouter } from 'next/router';
 
-import { UIContext } from '../../context/ui';
+import { useTheme } from '@mui/material/styles';
 
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box';
@@ -12,10 +14,16 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { useScrollTrigger } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import { MenuNavbar, Breadcrumb, Sidebar } from './';
+
+import { UIContext } from '../../context/ui';
+
+import { COLOR_FOUR } from '../../utils';
+
 
 interface Props {
   window?: () => Window;
@@ -31,6 +39,8 @@ export const Nabvar = (props: Props) => {
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
+  const theme = useTheme();
+
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -42,16 +52,32 @@ export const Nabvar = (props: Props) => {
     disableHysteresis: true,
     threshold: 100,
   });
-
+  
   return (
     <>
-      <AppBar component="nav" elevation={trigger ? 6 : 0} sx={{ backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main', transition: 'all .6s' }}>
+      <AppBar component="nav" elevation={1} sx={{ backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main', transition: 'all .6s' }}>
         <Toolbar sx={{ minHeight: { xs: '48px', md: '64px' }, justifyContent: "space-between" }}>
           <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-            <IconButton sx={{ display: { xs: 'flex', sm: 'flex', md: 'none' } }} size='large' edge='start' onClick={toggleSideMenu}>
+            {/* button in movil */}
+            <IconButton
+              sx={{
+                display: { xs: 'flex', sm: 'flex', md: 'none' }
+              }}
+              size='large' edge='start'
+              onClick={toggleSideMenu}
+            >
               <MenuIcon />
             </IconButton>
-            <Typography ml={3} color={'secondary'} variant='h6'>Jackson Quintero</Typography>
+            <NextLink href={'/'} passHref>
+              <Avatar sx={{
+                boxShadow: `${asPath !== '/' ? COLOR_FOUR : ''}`,
+                cursor: 'pointer',
+              }}
+                alt="Codigo Archivo"
+                src="favicon.ico"
+              />
+            </NextLink>
+            <Typography ml={3} color={theme.palette.text.secondary} variant='h6'>Jackson Quintero</Typography>
           </Box>
 
           <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
