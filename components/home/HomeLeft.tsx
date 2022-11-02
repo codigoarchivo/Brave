@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { useRouter } from 'next/router'
 
-import { styled, useTheme } from '@mui/material';
+import { Stack, styled, useTheme } from '@mui/material';
 
 import Box from '@mui/material/Box'
 
@@ -34,33 +34,39 @@ export const HomeLeft = () => {
                     position: 'relative'
                 }}
             >
-                <Box boxShadow={20} sx={{
-                    backgroundColor: 'primary.main',
-                    height: { xs: '15vh', sm: '20vh', md: '15vh' },
-                    width: '80%',
-                    position: 'absolute'
-                }}></Box>
 
-                <Typography
-                    color={theme.palette.text.secondary}
-                    sx={{
-                        typography: { xs: 'h2', sm: 'h1' },
-                        position: 'relative',
-                        fontWeight: '600 !important',
-                    }}>
-                    {locale === 'en' ? en.pageHome.a : es.pageHome.a}
-                </Typography>
+                <Stack spacing={15} width='100%'>
+                    <Box
+                        className='box_color'
+                        boxShadow={24}
+                        sx={{
+                            backgroundColor: 'primary.main',
+                            width: '80%',
+                            position: 'absolute'
+                        }}>
 
-                <Typography
-                    marginLeft={16}
-                    color={theme.palette.text.secondary}
-                    sx={{
-                        typography: { xs: 'h2', sm: 'h1' },
-                        position: 'relative',
-                        fontWeight: '600 !important',
-                    }}>
-                    {locale === 'en' ? en.pageHome.b : es.pageHome.b}
-                </Typography>
+                        <Typography
+                            color={theme.palette.text.secondary}
+                            sx={{
+                                typography: { xs: 'h2', sm: 'h1' },
+                                position: 'relative',
+                                fontWeight: '600 !important',
+                            }}>
+                            {locale === 'en' ? en.pageHome.a : es.pageHome.a}
+                        </Typography>
+                    </Box>
+
+                    <Typography
+                        marginLeft={16}
+                        color={theme.palette.text.secondary}
+                        sx={{
+                            typography: { xs: 'h2', sm: 'h1' },
+                            position: 'relative',
+                            fontWeight: '600 !important',
+                        }}>
+                        {locale === 'en' ? en.pageHome.b : es.pageHome.b}
+                    </Typography>
+                </Stack>
             </Box>
             <Root>
                 <Divider

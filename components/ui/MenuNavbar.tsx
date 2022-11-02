@@ -20,14 +20,13 @@ import { ColorsContext } from '../../context/colors/ColorsContex';
 
 interface PropsMenu {
     anchorEl?: Element | ((element: Element) => Element) | null | undefined,
-    setAnchorEl: any
+    setAnchorEl: any,
+    open: boolean
 }
 
-export const MenuNavbar: FC<PropsMenu> = ({ anchorEl, setAnchorEl }) => {
+export const MenuNavbar: FC<PropsMenu> = ({ open, anchorEl, setAnchorEl }) => {
 
     const { toggleColorMode } = useContext(ColorsContext);
-
-    const open = Boolean(anchorEl);
 
     const handleClose = () => {
         setAnchorEl(null);

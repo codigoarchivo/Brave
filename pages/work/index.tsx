@@ -41,8 +41,8 @@ const WorkPage: NextPage = () => {
   ]
   return (
     <Layout title={"Work"}>
-      <Container maxWidth={'xl'} sx={{ margin: { xs: '400px 0', sm: '100px 0', md: '150px 0' } }}>
-        <Stack justifyContent={'center'} >
+      <Container>
+        <Stack justifyContent={'center'} sx={{ height: '100vh' }}>
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
