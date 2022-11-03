@@ -1,10 +1,6 @@
-import React, { MouseEvent, useContext, useState } from 'react'
-
-import NextLink from 'next/link';
+import React, { MouseEvent, useContext, useEffect, useRef, useState } from 'react'
 
 import { useRouter } from 'next/router';
-
-import { useTheme } from '@mui/material/styles';
 
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box';
@@ -13,13 +9,12 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
-import { useScrollTrigger } from '@mui/material';
-import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
+import { LinearProgress, useScrollTrigger } from '@mui/material';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-import { MenuNavbar, Breadcrumb, Sidebar } from './';
+import { MenuNavbar, Breadcrumb, Sidebar, SomeButton } from './';
 
 import { UIContext } from '../../context/ui';
 
@@ -36,11 +31,44 @@ export const Nabvar = (props: Props) => {
 
   const { window } = props;
 
-  const { toggleSideMenu } = useContext(UIContext)
+  const { toggleSideMenu, lineProgress } = useContext(UIContext);
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const theme = useTheme();
+  const [progress, setProgress] = useState(0);
+
+  const [buffer, setBuffer] = useState(10);
+
+  const progressRef = useRef(() => { });
+
+  useEffect(() => {
+    progressRef.current = () => {
+      if (progress > 100 || !lineProgress) {
+        setProgress(0);
+        setBuffer(10);
+      } else {
+        const diff = Math.random() * 10;
+        const diff2 = Math.random() * 10;
+        setProgress(progress + diff);
+        setBuffer(progress + diff + diff2);
+      }
+    };
+  });
+
+  useEffect(() => {
+    if (!lineProgress) {
+      setProgress(0);
+      setBuffer(10);
+      return;
+    }
+
+    const timer = setInterval(() => {
+      progressRef.current();
+    }, 500);
+
+    return () => clearInterval(timer);
+
+  }, []);
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -57,6 +85,13 @@ export const Nabvar = (props: Props) => {
   return (
     <>
       <AppBar component="nav" elevation={1} sx={{ backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main', transition: 'all .6s' }}>
+        <Box sx={{ width: '100%', position: 'fixed' }}>
+          {
+            !lineProgress
+              ? <></>
+              : <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
+          }
+        </Box>
         <Toolbar sx={{ minHeight: { xs: '48px', md: '64px' }, justifyContent: "space-between" }}>
           <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
             {/* button in movil */}
@@ -69,23 +104,25 @@ export const Nabvar = (props: Props) => {
             >
               <MenuIcon />
             </IconButton>
-            <NextLink href={'/'} passHref>
-              <Avatar sx={{
+
+
+            <SomeButton
+              name={<Avatar sx={{
                 boxShadow: `${asPath !== '/' ? COLOR_FOUR : ''}`,
                 cursor: 'pointer',
               }}
                 alt="Codigo Archivo"
                 src="favicon.ico"
               />
-            </NextLink>
-            {/* <Typography ml={3} color={theme.palette.text.secondary} variant='h6'>Jackson Quintero</Typography> */}
+              }
+              href={'/'}
+            />
             <Box position={'relative'} >
               <Box className="content">
                 <div className="content__container" >
                   <Typography variant='h6' component='h6' className="content__container__text">
                     Hello
                   </Typography>
-
                   <ul className="content__container__list">
                     <li className="content__container__list__item">world !</li>
                     <li className="content__container__list__item">Jackson !</li>

@@ -3,6 +3,7 @@ import { UIState } from './';
 
 type UIActionType =
     | { type: '[UI] - Toggle - Sidebar' }
+    | { type: '[UI] - Linear - Progress' }
 
 export const uiReducer = (state: UIState, action: UIActionType): UIState => {
 
@@ -11,6 +12,11 @@ export const uiReducer = (state: UIState, action: UIActionType): UIState => {
             return {
                 ...state,
                 sidemenuOpen: !state.sidemenuOpen
+            }
+        case '[UI] - Linear - Progress':
+            return {
+                ...state,
+                lineProgress: !state.lineProgress
             }
         default:
             return state

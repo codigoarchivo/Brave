@@ -4,6 +4,7 @@ import { UIContext, uiReducer } from "./";
 
 export interface UIState {
     sidemenuOpen: boolean,
+    lineProgress: boolean,
 }
 
 interface UIData {
@@ -12,6 +13,7 @@ interface UIData {
 
 const UI_INITIAL_STATE: UIState = {
     sidemenuOpen: false,
+    lineProgress: false,
 }
 
 export const UIProvider: FC<UIData> = ({ children }) => {
@@ -19,7 +21,11 @@ export const UIProvider: FC<UIData> = ({ children }) => {
 
     const toggleSideMenu = () => {
         dispatch({ type: '[UI] - Toggle - Sidebar' })
-    }
+    };
+
+    const lineProgressMenu = () => {
+        dispatch({ type: '[UI] - Linear - Progress' })
+    };
 
     return (
         <UIContext.Provider value={{
@@ -27,6 +33,7 @@ export const UIProvider: FC<UIData> = ({ children }) => {
 
             // methods
             toggleSideMenu,
+            lineProgressMenu,
         }}>
             {children}
         </UIContext.Provider>
