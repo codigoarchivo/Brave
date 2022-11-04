@@ -34,6 +34,10 @@ export const HomeLeft = () => {
                     position: 'relative'
                 }}
             >
+                <div id="particle-container">
+                    {[...Array(30)].map((v, i) => <div key={i} className="particle"></div>)}    
+                </div>
+
 
                 <Stack spacing={15} width='100%'>
                     <Box
@@ -44,7 +48,6 @@ export const HomeLeft = () => {
                             width: '80%',
                             position: 'absolute'
                         }}>
-
                         <Typography
                             color={theme.palette.text.secondary}
                             sx={{
