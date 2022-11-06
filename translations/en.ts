@@ -12,7 +12,7 @@ export const en = {
       c: 'FullStack Developer',
    },
    pageAbout: {
-      a: 'Hello! I am Jackson Quintero. Web developer and web programmer. My professional goal is to continue learning, I am developing both the javascript and phyton line that is now in a continuous learning process to achieve it, I have dedicated as much time as possible, I will be open to learning other programming languages in the future.',
+      a: 'I am a Computer Engineer with +3 years of experience developing web applications with React and Node, thus, still in process, updating the line of study and learning in Python, with a focus on process optimization.',
       b: 'All',
       c: 'About',
       d: 'Me',

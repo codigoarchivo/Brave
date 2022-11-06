@@ -12,7 +12,7 @@ export const es = {
     c: 'Desarrollador De Pila Completa',
   },
   pageAbout: {
-    a: '¡Hola! Soy Jackson Quintero. Desarrollador web y programador web. Mi objetivo profesional es seguir aprendiendo, estoy desarrollando tanto la línea javascript como phyton que ahora se encuentra en un proceso de aprendizaje continuo para lograrlo, me he dedicado tanto tiempo como sea posible, estaré abierto a aprender otros lenguajes de programación en el futuro. ',
+    a: 'Soy un Ing. en Computación con +3 años de experiencia desarrollando aplicaciones web con React y Node, Así, mismo en proceso, actualización de línea de estudio y aprendizaje en Python, con enfoque en la optimización de procesos.',
     b: 'Todo',
     c: 'Sobre',
     d: 'Mi',
