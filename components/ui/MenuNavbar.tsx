@@ -16,6 +16,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import { useTheme, Typography } from '@mui/material';
 
 import { ColorsContext } from '../../context/colors/ColorsContex';
+import { COLOR_FIVE } from '../../utils';
 
 
 interface PropsMenu {
@@ -45,13 +46,13 @@ export const MenuNavbar: FC<PropsMenu> = ({ open, anchorEl, setAnchorEl }) => {
                 elevation: 0,
                 sx: {
                     overflow: 'visible',
-                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                    filter: `drop-shadow(0px 2px 8px ${COLOR_FIVE})`,
                     mt: 1.5,
                     '& .MuiAvatar-root': {
                         width: 32,
                         height: 32,
                         ml: -0.5,
-                        mr: 1,
+                        mr: 5,
                     },
                     '&:before': {
                         content: '""',

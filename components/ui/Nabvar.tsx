@@ -10,6 +10,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
+import Container from '@mui/material/Container';
 import { LinearProgress, useScrollTrigger } from '@mui/material';
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -83,7 +84,7 @@ export const Nabvar = (props: Props) => {
   });
 
   return (
-    <>
+    <Container>
       <AppBar component="nav" elevation={1} sx={{ backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main', transition: 'all .6s' }}>
         <Box sx={{ width: '100%', position: 'fixed' }}>
           {
@@ -112,7 +113,7 @@ export const Nabvar = (props: Props) => {
                 cursor: 'pointer',
               }}
                 alt="Codigo Archivo"
-                src="favicon.ico"
+                src="/favicon.ico"
               />
               }
               href={'/'}
@@ -164,6 +165,6 @@ export const Nabvar = (props: Props) => {
       <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }}>
         <Sidebar />
       </Box>
-    </>
+    </Container>
   )
 }

@@ -17,13 +17,14 @@ const About: NextPage = () => {
           container
           display={'flex'}
           alignItems={'center'}
-          spacing={{ xs: 2, sm: 5, md: 0 }}
+          py={{ xs: 10, md: 14 }}
+          spacing={{ xs: 3, sm: 5, md: 0 }}
           sx={{ height: '100vh', backgroundColor: 'background.default' }}>
           <Grid
             item
             xs={12}
             sm={12}
-            md={6}
+            md={7}
             display={'flex'}
             justifyContent={'center'}
             alignItems={'center'}
@@ -35,7 +36,7 @@ const About: NextPage = () => {
             item
             xs={12}
             sm={12}
-            md={6}
+            md={5}
             display={'flex'}
             justifyContent={'center'}
             alignItems={"center"}

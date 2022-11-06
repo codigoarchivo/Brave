@@ -37,6 +37,21 @@
       }
     }
   }
+
+  @media only screen and (min-width: 0px) and (max-device-width: 340px) and (-webkit-min-device-pixel-ratio: 1) {
+    &__container {
+      padding: 0 0px;
+
+      &__list {
+        padding-left: 47px;
+        font-size: 1.1rem !important;
+      }
+
+      &__text {
+        font-size: 1.1rem !important;
+      }
+    }
+  }
 }
 
 @-webkit-keyframes opacity {
