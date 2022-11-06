@@ -13,19 +13,15 @@ const HomePage: NextPage = () => {
       <Grid
         container
         spacing={0}
-        height={'100vh'}
-        sx={{
-          flexDirection: { xs: 'column-reverse', md: 'row' },
-        }}>
+        height={{ xs: '90vh', md: '100vh' }}
+      >
         <Grid
           item
           xs={12}
           sm={12}
           md={6}
-          display={'flex'}
-          justifyContent={'center'}
-          alignItems={'center'}
-          flexDirection={'column'}
+          display={'grid'}
+          sx={{ position: 'relative', textAlign: 'center' }}
         >
           <HomeLeft />
         </Grid>
@@ -34,7 +30,7 @@ const HomePage: NextPage = () => {
           xs={12}
           sm={12}
           md={6}
-          display={'flex'}
+          display={{ xs: 'none', md: 'flex' }}
           justifyContent={'center'}
           alignItems={"flex-end"}
           sx={{ position: 'relative' }}>
