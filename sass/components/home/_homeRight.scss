@@ -2,34 +2,5 @@
   height: -webkit-fill-available;
 }
 
-@media only screen and (min-width: 600px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
-  .box__image {
-    width: 25%;
-    height: 110px;
-  }
-  .box__background-transparents {
-    height: 32vh;
-    width: 60%;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-device-width: 820px) and (-webkit-min-device-pixel-ratio: 1) {
-  .box__background-color {
-    height: 40vh;
-  }
-  .box__image {
-    width: 38%;
-    height: 261px;
-  }
-  .box__background-transparents {
-    height: 30vh;
-    width: 60%;
-  }
-}
-
-@media only screen and (min-width: 821px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 1) {
-  .box__image {
-    width: 24%;
-    height: 137px;
-  }
-}
+// @media only screen and (min-width: 600px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
+// }
