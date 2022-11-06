@@ -22,7 +22,8 @@ export const HomeRight = () => {
                 sx={{
                     position: 'absolute',
                     width: { xs: '60%', sm: '26%', md: '80%', lg: '100%' },
-                    height: { xs: 218, sm: 137, md: 320, lg: 600, xl: 800 }, bottom: 0
+                    height: { xs: 218, sm: 137, md: 320, lg: 600, xl: 1000 },
+                    bottom: 0
                 }}>
                 <Image
                     src={'/img/perfil.png'}
