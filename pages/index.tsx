@@ -14,7 +14,11 @@ const HomePage: NextPage = () => {
         container
         spacing={0}
         height={{ xs: '90vh', md: '100vh' }}
+        position='relative'
       >
+        <div id="particle-container">
+          {[...Array(30)].map((v, i) => <div key={i} className="particle"></div>)}
+        </div>
         <Grid
           item
           xs={12}
