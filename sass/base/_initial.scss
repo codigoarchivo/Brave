@@ -42,3 +42,10 @@
 .bg-t {
   background-color: $color-primary;
 }
+
+.box_color {
+  -webkit-animation: float 8s ease-in-out infinite;
+          animation: float 8s ease-in-out infinite;
+  border-top-right-radius: 0.5em !important;
+  border-bottom-right-radius: 0.5em !important;
+}

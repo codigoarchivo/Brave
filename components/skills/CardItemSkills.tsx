@@ -25,10 +25,26 @@ interface ProspData {
 
 export const CardItemSkills: FC<ProspData> = ({ image, name }) => {
     return (
-        <Grid item xs={12} sm={3} md={3} lg={2} xl={1} display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'} >
+        <Grid
+            item
+            xs={12}
+            sm={3}
+            md={3}
+            lg={2}
+            xl={1}
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            flexDirection={'column'}
+        >
             <Card sx={{ minWidth: 200 }}>
                 <CardContent>
-                    <Stack direction="row" alignItems={'center'} divider={<Divider orientation="vertical" flexItem />} spacing={2}>
+                    <Stack
+                        direction="row"
+                        alignItems={'center'}
+                        divider={<Divider orientation="vertical" flexItem />}
+                        spacing={2}
+                    >
                         <Box sx={{ position: 'relative', width: { xs: '30%' }, height: { xs: 40 } }}>
                             <Image
                                 src={image}

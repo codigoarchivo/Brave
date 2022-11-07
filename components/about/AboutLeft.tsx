@@ -1,16 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
-import Box from '@mui/material/Box'
+import Box from '@mui/material/Box';
 
-import Stack from '@mui/material/Stack'
+import Stack from '@mui/material/Stack';
 
-import Typography from '@mui/material/Typography'
+import Typography from '@mui/material/Typography';
 
-import { useMediaQuery, useTheme } from '@mui/material'
+import { useMediaQuery, useTheme } from '@mui/material';
 
-import { en, es } from '../../translations'
+import { COLOR_ONE } from '../../utils';
+
+import { en, es } from '../../translations';
 
 export const AboutLeft = () => {
   const { locale } = useRouter();
@@ -29,12 +31,13 @@ export const AboutLeft = () => {
     >
 
       <Box
-
+        className='box_color'
         boxShadow={24}
         display='flex'
         sx={{
           border: `solid 1px ${theme.palette.text.secondary}`,
-          backgroundColor: 'trasparents',
+          backgroundColor: COLOR_ONE,
+          position: 'relative',
           height: {
             lg: 200,
             xl: 300
@@ -53,6 +56,7 @@ export const AboutLeft = () => {
           variant={'h1'}
           p={1}
           sx={{
+            fontFamily: 'Optima',
             fontSize: {
               xs: locale === 'en' ? '5.5rem' : '4.5rem',
               sm: locale === 'en' ? '10rem' : '8rem',
@@ -74,6 +78,7 @@ export const AboutLeft = () => {
         variant={'h2'}
         fontWeight={500}
         sx={{
+          fontFamily: 'Optima',
           fontSize: {
             xs: locale === 'en' ? '2.8rem' : '2.7rem',
             sm: '6rem',
