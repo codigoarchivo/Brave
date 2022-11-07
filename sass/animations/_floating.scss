@@ -1,0 +1,70 @@
+.area {
+  position: absolute;
+  width: 100%;
+  height: -webkit-fill-available;
+  z-index: 0;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: -webkit-fill-available;
+  overflow: hidden;
+  padding-left: 0;
+
+  li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background: $color-fourty;
+    -webkit-animation: animate 25s linear infinite;
+            animation: animate 25s linear infinite;
+    bottom: -150px;
+  }
+}
+
+@-webkit-keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+@for $i from 1 through 10 {
+  .circles li:nth-child(#{$i}) {
+    $size: 35px + (random($i) * 5);
+    $leftP: random($i) * 10%;
+    left: $leftP;
+    opacity: random(100) / 100;
+    height: $size;
+    width: $size;
+    -webkit-animation-delay: 0.9s + random($i);
+            animation-delay: 0.9s + random($i);
+    -webkit-animation-duration: 12s + random($i);
+            animation-duration: 12s + random($i);
+    background: $color-fourty;
+  }
+}
