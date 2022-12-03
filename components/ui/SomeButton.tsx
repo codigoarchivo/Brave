@@ -1,13 +1,8 @@
 import { FC, forwardRef, HTMLProps, useContext } from 'react';
-
 import Link from 'next/link';
-
 import { useRouter } from 'next/router';
-
 import Button from '@mui/material/Button';
-
 import { UIContext } from '../../context/ui';
-
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 
 interface PropsButton {
@@ -23,9 +18,7 @@ type ButtonProps = HTMLProps<HTMLButtonElement>
 
 export const SomeButton: FC<PropsButton> = ({ href, startIcon, size, variant, name, color }) => {
     const { lineProgressMenu, lineProgress } = useContext(UIContext);
-
     const { asPath } = useRouter();
-
     const progress = () => {
         lineProgressMenu()
         // dos segundos vuelve a false
