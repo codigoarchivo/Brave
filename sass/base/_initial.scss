@@ -2,6 +2,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -11,6 +12,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -33,19 +35,31 @@
 .color-p {
   color: $color-primary;
 }
+
 .color-t {
   color: $text-primary;
 }
+
 .bg-p {
   background-color: $color-primary;
 }
+
 .bg-t {
   background-color: $color-primary;
 }
 
 .box_color {
   -webkit-animation: float 8s ease-in-out infinite;
-          animation: float 8s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
   border-top-right-radius: 0.5em !important;
   border-bottom-right-radius: 0.5em !important;
+}
+
+.box_s {
+  border-top-left-radius: 0.5em !important;
+  border-bottom-left-radius: 0.5em !important;
+}
+
+.shadow-global {
+  filter: drop-shadow($shadow-primary);
 }
