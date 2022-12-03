@@ -1,10 +1,11 @@
 
 
 export interface IEntry {
-    image: string,
-    name: string,
-    type: string,
-    id: string,
+    image?: string,
+    name?: string,
+    type?: string,
+    id?: string,
+    cat?: string,
 }
 
 export interface ICategory {
