@@ -1,101 +1,61 @@
+import { useEffect, useState } from 'react';
 import { NextPage } from 'next'
-
-import { Layout } from '../../components/layouts'
-
+import { Typography, capitalize } from '@mui/material';
 import Container from '@mui/material/Container';
-
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid'
-
+import { Layout } from '../../components/layouts'
 import { CardItemSkills } from '../../components/skills';
+import { IEntry } from '../../interfaces';
+import { dataSkills } from '../../database';
+import { listDinamic } from '../../helpers';
 
-import { ICategory, IEntry } from '../../interfaces';
 
+interface INdata {
+    type: string;
+    fil: IEntry[];
+}
 
 const SkillsPage: NextPage = () => {
 
+    const [select, setSelect] = useState<INdata[]>([]);
 
-    const data: IEntry[] = [
-        {
-            image: '/img/perfil.png',
-            name: 'JavaScript',
-            type: 'lenguaje',
-            id: '96946597645987495874',
-        },
-        {
-            image: '/img/perfil.png',
-            name: 'JavaScript',
-            type: 'libreria',
-            id: '96946597645987495874',
-        },
-        {
-            image: '/img/perfil.png',
-            name: 'JavaScript',
-            type: 'frameword',
-            id: '96946597645987495874',
-        },
-        {
-            image: '/img/perfil.png',
-            name: 'JavaScript',
-            type: 'herramienta',
-            id: '96946597645987495874',
-        },
-        {
-            image: '/img/perfil.png',
-            name: 'JavaScript',
-            type: 'lenguaje',
-            id: '96946597645987495874',
-        },
-    ]
-
-    const categorias: ICategory[] = [
-        {
-            type: 'lenguaje',
-            id: '96946597645243525987495874',
-        },
-        {
-            type: 'libreria',
-            id: '96946597645987sffefsf495874',
-        },
-        {
-            type: 'frameword',
-            id: '969465976459ffsfs2352587495874',
-        },
-        {
-            type: 'herramienta',
-            id: '969465976455345345987495874',
-        },
-        {
-            type: 'lenguaje',
-            id: '9694659764598vxvv5543534534537495874',
-        },
-    ]
+    useEffect(() => {
+        const united = listDinamic(dataSkills.categorias, dataSkills.servicios);
+        if (united.length > 0) setSelect(united as INdata[]);
+    }, [])
 
     return (
         <Layout title={"Skills"}>
             <Container maxWidth="xl" sx={{ margin: { xs: '80px 0', sm: '100px 0', md: '150px 0' } }}>
-                {
-                    categorias.map((categoria: ICategory) => (
-                        <div key={categoria.id}>
-                            <h1>{categoria.type}</h1>
+                {select.map((list: INdata, i) => (
+                    <Box px={{ xs: 0, md: 10 }} py={3} key={i}>
+                        <Typography
+                            fontSize={{ xs: 24, md: 40, lg: 40, xl: 50 }}
+                            component={'h1'}
+                            mb={4}
+                            color="text.secondary"
+                        > {capitalize(`${list.type}`)}</Typography>
+                        <Grid
+                            container
+                            spacing={{ xs: 2, md: 3 }}
+                            px={{ xs: 0, md: 3 }}
+                            pb={{ xs: 2, md: 3 }}
+                            pt={0}
+                            bgcolor={'primary.main'}
+                            height={'min-content'}
+                            justifyContent={'start'}
+                            className='box_color box_s'
+                            boxShadow={24}
+                        >
 
-                            <Grid
-                                container
-                                spacing={{ xs: 2, md: 3 }}
-                                columns={{ xs: 4, sm: 8, md: 12 }}
-                                justifyContent={'center'}
-                                sx={{ height: 'min-content', backgroundColor: 'background.default' }}
-                            >
-                                <>
-                                    {data.map((item, i) => (
-                                        <CardItemSkills key={i} {...item} />
-                                    ))}
-                                </>
-                            </Grid>
-                        </div>
+                            {list.fil.map((item: IEntry, i) => (
+                                <CardItemSkills key={i} {...item} />
+                            ))}
 
-                    ))
-                }
-
+                        </Grid>
+                    </Box>
+                ))}
             </Container>
         </Layout>
     )
