@@ -1,17 +1,10 @@
 import { useRouter } from 'next/router';
-
 import ContactPageIcon from '@mui/icons-material/ContactPage';
-
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
-
 import HomeIcon from '@mui/icons-material/Home';
-
 import PersonIcon from '@mui/icons-material/Person';
-
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
-
 import { en, es } from '../../translations';
-
 
 
 export const RutaLink = () => {
