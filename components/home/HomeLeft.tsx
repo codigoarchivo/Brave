@@ -1,13 +1,8 @@
 import { useRouter } from 'next/router'
-
 import { Stack, styled, useTheme } from '@mui/material';
-
 import Box from '@mui/material/Box'
-
 import Divider from '@mui/material/Divider'
-
 import Typography from '@mui/material/Typography'
-
 import { en, es } from '../../translations';
 
 export const HomeLeft = () => {
@@ -50,7 +45,6 @@ export const HomeLeft = () => {
                             fontSize: sizeh1,
                             position: 'relative',
                             fontWeight: '600 !important',
-                            fontFamily: 'Optima',
                         }}>
                         {locale === 'en' ? en.pageHome.a : es.pageHome.a}
                     </Typography>
@@ -63,7 +57,6 @@ export const HomeLeft = () => {
                         fontSize: sizeh1,
                         position: 'relative',
                         fontWeight: '600 !important',
-                        fontFamily: 'Optima',
                     }}>
                     {locale === 'en' ? en.pageHome.b : es.pageHome.b}
                 </Typography>
