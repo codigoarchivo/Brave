@@ -1,7 +1,11 @@
-import React, { MouseEvent, useContext, useEffect, useRef, useState } from 'react'
-
+import {
+  MouseEvent,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import { useRouter } from 'next/router';
-
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -12,13 +16,14 @@ import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
 import { LinearProgress, useScrollTrigger } from '@mui/material';
-
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
-import { MenuNavbar, Breadcrumb, Sidebar, SomeButton } from './';
-
+import {
+  MenuNavbar,
+  Breadcrumb,
+  Sidebar,
+  SomeButton
+} from './';
 import { UIContext } from '../../context/ui';
-
 import { COLOR_FOUR } from '../../utils';
 
 
@@ -27,19 +32,12 @@ interface Props {
 }
 
 export const Nabvar = (props: Props) => {
-
   const { asPath } = useRouter()
-
   const { window } = props;
-
   const { toggleSideMenu, lineProgress } = useContext(UIContext);
-
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
   const [progress, setProgress] = useState(0);
-
   const [buffer, setBuffer] = useState(10);
-
   const progressRef = useRef(() => { });
 
   useEffect(() => {
@@ -85,7 +83,14 @@ export const Nabvar = (props: Props) => {
 
   return (
     <Container>
-      <AppBar component="nav" elevation={1} sx={{ backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main', transition: 'all .6s' }}>
+      <AppBar
+        component="nav"
+        elevation={1}
+        sx={{
+          backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main',
+          transition: 'all .6s'
+        }}
+      >
         <Box sx={{ width: '100%', position: 'fixed' }}>
           {
             !lineProgress
@@ -93,7 +98,10 @@ export const Nabvar = (props: Props) => {
               : <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
           }
         </Box>
-        <Toolbar sx={{ minHeight: { xs: '48px', md: '64px' }, justifyContent: "space-between" }}>
+        <Toolbar sx={{
+          minHeight: { xs: '48px', md: '64px' },
+          justifyContent: "space-between"
+        }}>
           <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
             {/* button in movil */}
             <IconButton
@@ -121,7 +129,11 @@ export const Nabvar = (props: Props) => {
             <Box position={'relative'} >
               <Box className="content">
                 <div className="content__container" >
-                  <Typography variant='h6' component='h6' className="content__container__text">
+                  <Typography
+                    variant='h6'
+                    component='h6'
+                    className="content__container__text">
+
                     Hello
                   </Typography>
                   <ul className="content__container__list">
@@ -153,7 +165,11 @@ export const Nabvar = (props: Props) => {
         </Toolbar>
 
         <Box display='flex'>
-          <MenuNavbar open={open} anchorEl={anchorEl} setAnchorEl={setAnchorEl} />
+          <MenuNavbar
+            open={open}
+            anchorEl={anchorEl}
+            setAnchorEl={setAnchorEl}
+          />
         </Box>
 
         <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
