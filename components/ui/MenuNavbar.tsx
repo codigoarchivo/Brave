@@ -1,19 +1,17 @@
 import { useContext, FC } from 'react';
-
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import LoginIcon from '@mui/icons-material/Login';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import LogoutIcon from '@mui/icons-material/Logout';
-
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-
-import { useTheme, Typography } from '@mui/material';
 
 import { ColorsContext } from '../../context/colors/ColorsContex';
 import { COLOR_FIVE } from '../../utils';
