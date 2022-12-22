@@ -1,9 +1,6 @@
 import { FC, ReactNode } from 'react'
-
-import Box from '@mui/material/Box';
-
 import Head from 'next/head'
-
+import Container from '@mui/material/Container';
 import { FloatingButton, Nabvar } from '../ui';
 
 interface Props {
@@ -12,31 +9,22 @@ interface Props {
 }
 
 export const Layout: FC<Props> = ({ children, title = 'name' }) => {
-
-
     return (
         <>
             <Head>
                 <title>{title}</title>
             </Head>
-
-
-            <>
+            <header>
                 <Nabvar />
-                <main>
-
-
-                    <Box className="fadeIn">
+            </header>
+            <main>
+                <Container>
+                    <div className="fadeIn">
                         {children}
-                    </Box>
-
+                    </div>
                     <FloatingButton />
-
-
-
-                </main>
-            </>
-
+                </Container>
+            </main>
         </>
     )
 }
