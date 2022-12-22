@@ -2,13 +2,11 @@ import { useRouter } from 'next/router';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import { useMediaQuery, useTheme } from '@mui/material';
-import { COLOR_ONE } from '../../utils';
+import { useMediaQuery } from '@mui/material';
 import { en, es } from '../../translations';
 
 export const AboutLeft = () => {
   const { locale } = useRouter();
-  const theme = useTheme();
   const matches = useMediaQuery('(max-width:281px)');
 
   return (
@@ -19,14 +17,12 @@ export const AboutLeft = () => {
       spacing={{ xs: 2, sm: 1, md: 6 }}
       width={'100%'}
     >
-
       <Box
         className='box_color'
         boxShadow={24}
         display='flex'
         sx={{
-          border: `solid 1px ${theme.palette.text.secondary}`,
-          backgroundColor: COLOR_ONE,
+          backgroundColor: 'primary.main',
           position: 'relative',
           height: {
             lg: 200,
@@ -42,7 +38,7 @@ export const AboutLeft = () => {
         }}
       >
         <Typography
-          color={theme.palette.text.secondary}
+          color={'text.secondary'}
           variant={'h1'}
           p={1}
           sx={{
@@ -63,7 +59,7 @@ export const AboutLeft = () => {
 
 
       <Typography
-        color={theme.palette.text.secondary}
+        color={'text.secondary'}
         variant={'h2'}
         fontWeight={500}
         sx={{
