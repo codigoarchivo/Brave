@@ -1,8 +1,10 @@
 $color-primary: #2f92b7;
 $color-secondary: #006487;
 $color-tertiary: #6ac2e9;
-$color-fourty: #00000099;
+$color-fourty: #121212;
 
 $text-primary: #efedee;
 
-$shadow-primary: 0 2px 5px rgba(0, 0, 0, 0.7);
+$shadow-primary: 0 2px 5px #121212;
+$shadow-secondary: 0px 11px 15px -7px rgb(0 0 0 / 20%),
+  0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
