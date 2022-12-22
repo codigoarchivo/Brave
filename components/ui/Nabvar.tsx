@@ -4,9 +4,9 @@ import {
   useEffect,
   useRef,
   useState
-} from 'react'
+} from 'react';
 import { useRouter } from 'next/router';
-import AppBar from '@mui/material/AppBar'
+import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
-import { LinearProgress, useScrollTrigger } from '@mui/material';
+import { LinearProgress, Stack, useScrollTrigger } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {
   MenuNavbar,
@@ -82,105 +82,123 @@ export const Nabvar = (props: Props) => {
   });
 
   return (
-    <Container>
-      <AppBar
-        component="nav"
-        elevation={1}
-        sx={{
-          backgroundColor: trigger ? 'primary.main' : asPath === '/' ? 'transparent' : 'primary.main',
-          transition: 'all .6s'
-        }}
-      >
-        <Box sx={{ width: '100%', position: 'fixed' }}>
-          {
-            !lineProgress
-              ? <></>
-              : <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
-          }
-        </Box>
-        <Toolbar sx={{
-          minHeight: { xs: '48px', md: '64px' },
-          justifyContent: "space-between"
-        }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-            {/* button in movil */}
-            <IconButton
-              sx={{
-                display: { xs: 'flex', sm: 'flex', md: 'none' }
-              }}
-              size='large' edge='start'
-              onClick={toggleSideMenu}
-            >
-              <MenuIcon />
-            </IconButton>
-
-
-            <SomeButton
-              name={<Avatar sx={{
-                boxShadow: `${asPath !== '/' ? COLOR_FOUR : ''}`,
-                cursor: 'pointer',
-              }}
-                alt="Codigo Archivo"
-                src="/favicon.ico"
-              />
+    <Box
+      component={'nav'}
+      sx={{
+        backgroundColor: trigger
+          ? 'primary.main'
+          : 'transparent',
+        transition: 'all .6s'
+      }}
+    >
+      <AppBar elevation={1}>
+        <Container maxWidth='lg' >
+          <Stack flexDirection={'row'} justifyContent='space-between'>
+            <Box sx={{ width: '100%', position: 'fixed' }}>
+              {
+                !lineProgress
+                  ? <></>
+                  : <LinearProgress
+                    variant="buffer"
+                    value={progress}
+                    valueBuffer={buffer}
+                  />
               }
-              href={'/'}
-            />
-            <Box position={'relative'} >
-              <Box className="content">
-                <div className="content__container" >
-                  <Typography
-                    variant='h6'
-                    component='h6'
-                    className="content__container__text">
+            </Box>
+            <Box sx={{
+              display: 'flex',
+              alignItems: 'center',
+              textAlign: 'center'
+            }}>
+              {/* button in movil */}
+              <IconButton
+                sx={{
+                  display: { xs: 'flex', sm: 'flex', md: 'none' }
+                }}
+                size='large' edge='start'
+                onClick={toggleSideMenu}
+              >
+                <MenuIcon />
+              </IconButton>
 
-                    Hello
-                  </Typography>
-                  <ul className="content__container__list">
-                    <li className="content__container__list__item">world !</li>
-                    <li className="content__container__list__item">Jackson !</li>
-                    <li className="content__container__list__item">users !</li>
-                    <li className="content__container__list__item">everybody !</li>
-                  </ul>
-                </div>
+              <SomeButton
+                name={<Avatar sx={{
+                  boxShadow: `${asPath !== '/'
+                    ? COLOR_FOUR
+                    : ''
+                    }`,
+                  cursor: 'pointer',
+                }}
+                  alt="Codigo Archivo"
+                  src="/favicon.ico"
+                />
+                }
+                href={'/'}
+              />
+
+              <Box position={'relative'} >
+                <Box className="content" color={'secondary.main'}>
+                  <div className="content__container" >
+                    <Typography
+                      variant='h6'
+                      component='h6'
+                      className="content__container__text">
+
+                      Hello
+                    </Typography>
+                    <ul className="content__container__list">
+                      <li className="content__container__list__item">world !</li>
+                      <li className="content__container__list__item">Jackson !</li>
+                      <li className="content__container__list__item">users !</li>
+                      <li className="content__container__list__item">everybody !</li>
+                    </ul>
+                  </div>
+                </Box>
               </Box>
             </Box>
 
-          </Box>
 
-          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex' } }}>
-            <Tooltip title="Account settings">
-              <IconButton
-                onClick={handleClick}
-                size="small"
-                sx={{ ml: 2 }}
-                aria-controls={open ? 'account-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-              >
-                <MoreVertIcon />
-              </IconButton>
-            </Tooltip>
-          </Box>
-        </Toolbar>
+            <Box sx={{
+              display: { xs: 'none', sm: 'none', md: 'flex' },
+            }}>
+              <Breadcrumb />
+            </Box>
 
-        <Box display='flex'>
-          <MenuNavbar
-            open={open}
-            anchorEl={anchorEl}
-            setAnchorEl={setAnchorEl}
-          />
-        </Box>
+            <Toolbar sx={{
+              minHeight: { xs: '48px', md: '64px' },
+              justifyContent: "space-between",
+              display: { xs: 'none', sm: 'none', md: 'flex' }
+            }}>
+              <Tooltip title="Account settings">
+                <IconButton
+                  onClick={handleClick}
+                  size="small"
+                  sx={{ ml: 2 }}
+                  aria-controls={open ? 'account-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={open ? 'true' : undefined}
+                  color="secondary"
+                >
+                  <MoreVertIcon />
+                </IconButton>
+              </Tooltip>
+              <Box display='flex'>
+                <MenuNavbar
+                  open={open}
+                  anchorEl={anchorEl}
+                  setAnchorEl={setAnchorEl}
+                />
+              </Box>
+            </Toolbar>
 
-        <Box sx={{ display: { xs: 'none', sm: 'none', md: 'block' } }}>
-          <Breadcrumb />
-        </Box>
-
+          </Stack>
+        </Container>
       </AppBar>
+
 
       <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none' } }}>
         <Sidebar />
       </Box>
-    </Container>
+    </Box>
   )
 }
