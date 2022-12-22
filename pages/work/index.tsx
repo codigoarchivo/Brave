@@ -1,16 +1,12 @@
-import React, { useRef, useState } from "react";
-import Container from '@mui/material/Container'
-import { NextPage } from 'next'
-
-import { Layout } from '../../components/layouts'
-import { WorkScreen } from '../../components/work'
-
+import { NextPage } from 'next';
+import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import { EffectCoverflow, Pagination } from "swiper";
+import { WorkScreen } from '../../components/work';
+import { Layout } from '../../components/layouts';
 
 
 // Import Swiper styles
@@ -21,28 +17,32 @@ import "swiper/css/pagination";
 const WorkPage: NextPage = () => {
   const data = [
     {
-      name: 'JavaScript 1',
-      description: 'hola',
+      name: 'Proyecto #1',
+      description: 'JavaScript, css, html, react, node.js',
       status: 'proceso',
       image: '/img/perfil.png',
     },
     {
-      name: 'JavaScript 2',
-      description: 'hola',
-      status: 'pending',
+      name: 'Proyecto #2',
+      description: 'typeScript, css, html, react, node.js',
+      status: 'proceso',
       image: '/img/perfil.png',
     },
     {
-      name: 'JavaScript 3',
-      description: 'hola',
-      status: 'termimate',
+      name: 'Proyecto #3',
+      description: 'python, css, html, react, node.js',
+      status: 'terminate',
       image: '/img/perfil.png',
     },
   ]
   return (
     <Layout title={"Work"}>
-      <Container>
-        <Stack justifyContent={'center'} sx={{ height: '100vh' }}>
+      <Container maxWidth='xl'>
+        <Stack
+          justifyContent={'center'}
+          alignItems='center'
+          height={'calc(100vh - 5px)'}
+        >
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
@@ -61,8 +61,12 @@ const WorkPage: NextPage = () => {
           >
             {
               data.map((item, key) => (
-                <SwiperSlide key={key}>
-                  <WorkScreen  {...item} />
+                <SwiperSlide
+                  key={key}
+                  style={{ width: '300px' }}
+                  className='shadow-secondary'
+                >
+                  <WorkScreen  {...item} idx={key + 1} />
                 </SwiperSlide>
               ))
             }
