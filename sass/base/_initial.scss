@@ -63,3 +63,7 @@
 .shadow-global {
   filter: drop-shadow($shadow-primary);
 }
+
+.shadow-secondary {
+  box-shadow: $shadow-secondary;
+}
