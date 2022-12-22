@@ -8,11 +8,14 @@ export const lightTheme = createTheme({
         background: {
             default: '#eee'
         },
+        text: {
+            secondary: '#121212'
+        },
         primary: {
             main: '#2f92b7'
         },
         secondary: {
-            main: '#ffffff'
+            main: '#121212'
         },
         error: {
             main: red.A400
