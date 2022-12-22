@@ -1,28 +1,20 @@
-import React from 'react'
-
-import { useRouter } from 'next/router'
-
-import Box from '@mui/material/Box'
-
-import Button from '@mui/material/Button'
-
-import Typography from '@mui/material/Typography'
-
-import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
-
-import { en, es } from '../../translations'
-import { useMediaQuery } from '@mui/material'
+import { useRouter } from 'next/router';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';;
+import { useMediaQuery } from '@mui/material';
+import { en, es } from '../../translations';
 
 export const AboutRight = () => {
     const { locale } = useRouter();
-
     const matches = useMediaQuery('(max-width:420px)');
-
     return (
         <Box display={'grid'}>
             <Typography
                 className={'about__text-p'}
                 variant={'body1'}
+                color={'text.secondary'}
                 p={1}
                 sx={{
                     lineHeight: 1.9,
@@ -52,7 +44,11 @@ export const AboutRight = () => {
                 variant="outlined"
                 endIcon={<DownloadForOfflineIcon />}
             >
-                {locale === "en" ? en.pageAbout.e.slice(matches ? 8 : 0) : es.pageAbout.e.slice(matches ? 9 : 0)}
+                {
+                    locale === "en"
+                        ? en.pageAbout.e.slice(matches ? 8 : 0)
+                        : es.pageAbout.e.slice(matches ? 9 : 0)
+                }
             </Button>
         </Box>
     )
