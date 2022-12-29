@@ -1,15 +1,13 @@
 import { useRouter } from 'next/router';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
-import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import { en, es } from '../../translations';
 
-
 export const RutaLink = () => {
-
-  const { locale } = useRouter()
+  const { locale } = useRouter();
 
   const data = [
     {
@@ -25,19 +23,19 @@ export const RutaLink = () => {
     {
       href: "/skills",
       name: locale === "en" ? en.pageLayout.c : es.pageLayout.c,
-      startIcon: DesignServicesIcon
+      startIcon: WorkspacePremiumIcon
     },
     {
       href: "/work",
       name: locale === "en" ? en.pageLayout.d : es.pageLayout.d,
-      startIcon: WorkHistoryIcon
+      startIcon: BusinessCenterIcon
     },
     {
       href: "/contact",
       name: locale === "en" ? en.pageLayout.e : es.pageLayout.e,
       startIcon: ContactPageIcon
     }
-  ]
+  ];
 
   return data
 }
