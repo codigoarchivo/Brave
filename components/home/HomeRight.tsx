@@ -6,49 +6,47 @@ import anime from "animejs";
 
 export const HomeRight = () => {
   useEffect(() => {
-    anime({
+    const data = anime({
       targets: ".animation-keyframes-demo",
       keyframes: [
-        { translateY: -0 },
-        { translateX: 250 },
-        { translateY: 120 },
+        { translateX: 420 },
+        { translateY: 50 },
+        { translateX: 450 },
+        { translateY: 100 },
+        { translateX: 20 },
+        { translateY: 150 },
+        { translateX: 470 },
+        { translateY: 200 },
+        { translateX: 10 },
+        { translateY: 250 },
+        { translateX: 470 },
+        { translateY: 20 },
         { translateX: 0 },
+        { translateX: 30 },
+        { translateY: 350 },
+        { translateX: 450 },
+        { translateY: 300 },
+        { translateX: 20 },
         { translateY: 0 },
+        { translateY: -400 },
+        { translateY: -350 },
       ],
       rotate: {
         value: "+=4turn",
-        duration: 6000,
+        duration: 10000,
         easing: "easeInOutSine",
       },
-      translateX: {
-        value: "*=4",
-        duration: 6000,
-      },
-      scale: [
-        { value: 0.1, easing: "easeOutSine", duration: 5000 },
-        { value: 1, easing: "easeInOutQuad", duration: 5200 },
-      ],
-      delay: anime.stagger(200, { grid: [14, 5], from: "center" }),
+      scale: [{ value: 0.1, easing: "easeOutSine", duration: 10000 }],
+      delay: anime.stagger(1000, { grid: [14, 5], from: "center" }),
       borderRadius: ["0%", "50%"],
       direction: "alternate",
-      duration: 5000,
-      easing: "easeOutElastic(1, .8)",
+      duration: 20000,
+      easing: "easeInOutQuad(1, .8)",
       loop: true,
+      opacity: 0.8,
     });
-  }, []);
 
-  useEffect(() => {
-    var path = anime.path(".motion-path-demo path");
-
-    anime({
-      targets: ".motion-path-demo svg",
-      translateX: path("x"),
-      translateY: path("y"),
-      rotate: path("angle"),
-      easing: "linear",
-      duration: 6000,
-      loop: true,
-    });
+    console.log(data);
   }, []);
 
   return (
@@ -59,6 +57,7 @@ export const HomeRight = () => {
           position: "relative",
           backgroundColor: "primary.main",
           width: { xs: "50%", md: "50%" },
+          zIndex: 5000,
         }}
       ></Box>
 
@@ -72,36 +71,7 @@ export const HomeRight = () => {
         }}
       >
         <Container>
-          <Stack spacing={10} position="relative">
-            <div
-              style={{
-                position: "absolute",
-              }}
-              className="motion-path-demo"
-            >
-              <svg
-                version="1.0"
-                xmlns="http://www.w3.org/2000/svg"
-                width="30.000000pt"
-                height="30.000000pt"
-                viewBox="0 0 30.000000 30.000000"
-                preserveAspectRatio="xMidYMid meet"
-              >
-                <g
-                  transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)"
-                  fill="#000000"
-                  stroke="none"
-                >
-                  <path
-                    d="M87 202 c-21 -42 -38 -87 -37 -99 0 -24 54 -83 76 -83 18 0 17 10 -1
-34 -19 25 -19 50 0 66 12 10 15 9 15 -5 0 -9 11 -30 24 -46 13 -15 26 -34 29
--41 7 -21 46 20 53 57 6 34 -11 115 -25 115 -5 0 -12 -8 -15 -17 -5 -13 -13
--5 -34 36 -15 30 -31 56 -37 57 -5 2 -27 -32 -48 -74z"
-                  />
-                </g>
-              </svg>
-            </div>
-
+          <Stack position="relative">
             <div
               style={{
                 backgroundColor: "black",
